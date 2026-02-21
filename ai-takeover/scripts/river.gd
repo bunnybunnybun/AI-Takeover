@@ -55,7 +55,7 @@ var words = [
     "House"
 ]
 
-var labels = []
+var label_nodes = []
 
 var max_distance = 500 * len(words)
 
@@ -63,8 +63,6 @@ var max_distance = 500 * len(words)
 func _ready() -> void:
 	for i in range(len(words)):
 		var word = words[i]
-		
-		var word_group = []
 		
 		var n = Node.new()
 		n.name = word
@@ -76,7 +74,6 @@ func _ready() -> void:
 		l.position.y = get_viewport_rect().size.y / 2 + get_viewport_rect().position.y
 		
 		n.add_child(l)
-		word_group.append(l)
 		l.add_to_group("labels")
 		
 		var r = Panel.new()
@@ -99,39 +96,34 @@ func _ready() -> void:
 		r.add_theme_color_override("color", Color.REBECCA_PURPLE)
 		
 		n.add_child(r)
-		word_group.append(r)
 		
 		var area_2d = Area2D.new()
-		area_2d.global_position = r.position
-		
+		area_2d.position = r.position + r.size / 2
 		var collision_rect = CollisionShape2D.new()
-		collision_rect.global_position.x = r.position.x
-		collision_rect.global_position.y = r.position.y
 		
 		var rectangle_shape = RectangleShape2D.new()
 		rectangle_shape.size = r.size
 		
 		collision_rect.shape = rectangle_shape
-		
+		collision_rect.position = Vector2.ZERO
+
 		area_2d.add_child(collision_rect)
 		area_2d.connect("area_entered", func(area):
 			emit_signal("word_pushed", n)
-			print(area.name)
 		)
 		
 		n.add_child(area_2d)
 		
 		add_child(n)
 		
-		labels.append(word_group)
+		label_nodes.append(n)
 
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	for word_group in labels:
-		for part in word_group:
+	for node in label_nodes:
+		for part in node.get_children():
 			part.position.x += 5
 			if part.position.x > max_distance + get_viewport_rect().position.x:
 				part.position.x = get_viewport_rect().position.x - 200
-	
