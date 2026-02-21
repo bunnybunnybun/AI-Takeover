@@ -123,6 +123,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	for node in label_nodes:
+		if node == null:
+			continue
 		for part in node.get_children():
 			part.position.x += 5
 			if part.position.x > max_distance + get_viewport_rect().position.x:
