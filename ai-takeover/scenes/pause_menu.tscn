@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://x4b5geqgt1ku"]
+
+[ext_resource type="Script" uid="uid://c02ieew0nt52q" path="res://scripts/pause_menu.gd" id="1_n87rw"]
+
+[node name="pause_menu" type="Control" unique_id=1764987467]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n87rw")
+
+[node name="TextureRect" type="ColorRect" parent="." unique_id=897194037]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.1254902)
