@@ -9,6 +9,8 @@ func _on_pressed():
 
 func _on_animation_player_animation_finished(anim_name):
 	if pause_menu.visible == true and is_fading_out == true:
+		$"../../main_container".visible = true
+		$"../".visible = false
 		pause_menu.visible = false
 		is_fading_out = false
 		get_tree().paused = false
