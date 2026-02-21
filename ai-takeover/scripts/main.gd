@@ -1,7 +1,10 @@
 extends Node2D
 var word_array: Array = []
 var phrases: Array = [
-	["Free", "Road"]
+	[&"Free", &"Road"],
+	[&"Free"],
+	[&"President"],
+	[&"Road"]
 ]
 var score = 0
 
@@ -15,9 +18,9 @@ func _process(_delta: float) -> void:
 	for i in range(len(word_array)):
 		for j in range(i+1, len(word_array) + 1):
 			if word_array.slice(i,j) in phrases:
-				score += 1
-		if word_array == ["I","Will","Help","The","Nation"]:
-			score += 1
+				score += 1	
+			for k in range(i,j+1):
+				word_array.remove_at(k)
 		
 func _level_load ()-> void: 
 	var words = get_node_or_null("River")
