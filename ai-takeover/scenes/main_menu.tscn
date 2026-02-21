@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ddl6tvnuar0i7"]
+
+[ext_resource type="Texture2D" uid="uid://cawyt4qo1bc5d" path="res://icon.svg" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://0qgfs5uw3bn1" path="res://scripts/quit.gd" id="2_bqqt6"]
+[ext_resource type="Script" uid="uid://df61x37rfu7v8" path="res://scripts/play.gd" id="2_wu84c"]
+
+[node name="main_menu" type="Control" unique_id=1618483000]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1981579321]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.0
+offset_top = -264.0
+offset_right = 239.0
+offset_bottom = 264.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="play" type="TextureButton" parent="VBoxContainer" unique_id=1850530869]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("1_ekxnf")
+stretch_mode = 5
+script = ExtResource("2_wu84c")
+
+[node name="settings" type="TextureButton" parent="VBoxContainer" unique_id=1064052194]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("1_ekxnf")
+stretch_mode = 5
+
+[node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=1751975841]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("1_ekxnf")
+stretch_mode = 5
+script = ExtResource("2_bqqt6")
+
+[connection signal="pressed" from="VBoxContainer/play" to="VBoxContainer/play" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer/quit" method="_on_pressed"]
