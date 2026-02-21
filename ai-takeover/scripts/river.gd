@@ -119,14 +119,12 @@ func _ready() -> void:
 		
 		label_nodes.append(n)
 
-
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	for node in label_nodes:
 		if node == null:
 			continue
 		for part in node.get_children():
-			part.position.x += 5
+			part.position.x += GlobalVariables.word_speed
 			if part.position.x > max_distance + get_viewport_rect().position.x:
 				part.position.x = get_viewport_rect().position.x - 200
