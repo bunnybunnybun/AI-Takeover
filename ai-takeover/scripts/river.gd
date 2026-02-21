@@ -114,11 +114,41 @@ func _ready() -> void:
 		
 		n.add_child(area_2d)
 		
+		var notifier = VisibleOnScreenNotifier2D.new()
+		notifier.set_rect(Rect2(rectangle_shape.size, Vector2.ZERO))
+		notifier.name = word + "_notifier"
+		
+		n.add_child(notifier)
+		
 		add_child(n)
 		
 		label_nodes.append(n)
 
-
+func shuffle_positions(except: Array):
+	var positions = []
+	for node in label_nodes:
+		if node == null:
+			continue
+		if node in except:
+			continue
+		for part in node.get_children():
+			if is_instance_of(part, Label):
+				positions.append(part.position.x)
+				break
+			
+	positions.shuffle()
+	var i = 0
+	for node in label_nodes:
+		if node == null:
+			continue
+		if node in except:
+			continue
+		for part in node.get_children():
+			if !is_instance_of(part, Panel):
+				part.position.x = positions[i]
+			else:
+				part.position.x = positions[i] - 18
+		i += 1
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
