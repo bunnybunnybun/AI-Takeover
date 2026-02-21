@@ -6,18 +6,17 @@ var score
 func _ready() -> void:
 	_level_load()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if word_array.size() == 5:
+	if len(word_array) == 5:
 		if word_array == ["I","Will","Help","The","Nation"]:
 			score += 1
 		
 func _level_load ()-> void: 
-	var words = get_node_or_null("words")
+	var words = get_node_or_null("River")
 	if words: 
-		for word in words: 
-			word.word_pushed.connect(_on_word_pushed)
+		words.word_pushed.connect(_on_word_pushed)
+		
 func _on_word_pushed(word) -> void: 
 	word_array.append(word.name)
 	print(word_array)
