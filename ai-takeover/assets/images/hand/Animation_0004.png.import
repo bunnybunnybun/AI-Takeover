@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1txl45b88hgl"
-path="res://.godot/imported/Illustration53 (4).png-dd20cabaef521bd0bb11cbd9e07481d4.ctex"
+uid="uid://b7mnf5fydiwy2"
+path="res://.godot/imported/Animation_0004.png-6740b9374d0c4035aa6adb1f49b2913d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/election_main/Illustration53 (4).png"
-dest_files=["res://.godot/imported/Illustration53 (4).png-dd20cabaef521bd0bb11cbd9e07481d4.ctex"]
+source_file="res://assets/images/hand/Animation_0004.png"
+dest_files=["res://.godot/imported/Animation_0004.png-6740b9374d0c4035aa6adb1f49b2913d.ctex"]
 
 [params]
 

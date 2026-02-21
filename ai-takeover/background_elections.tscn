@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://brx3uxf64o48t"]
 
-[ext_resource type="Texture2D" uid="uid://dldbw5fijux6q" path="res://images/election_main/Illustration53 (2).png" id="1_8h78q"]
-[ext_resource type="Texture2D" uid="uid://dniuir203h7hd" path="res://images/election_main/Illustration53 (3).png" id="2_d75al"]
-[ext_resource type="Texture2D" uid="uid://1txl45b88hgl" path="res://images/election_main/Illustration53 (4).png" id="3_p28mv"]
-[ext_resource type="Texture2D" uid="uid://dwyud4p30lwjn" path="res://images/election_main/Illustration53.png" id="4_231sa"]
-[ext_resource type="Texture2D" uid="uid://bqidouutqa0xw" path="res://images/election_main/Illustration53 (1).png" id="5_d75al"]
+[ext_resource type="Texture2D" uid="uid://dldbw5fijux6q" path="res://assets/images/election_main/Illustration53 (2).png" id="1_8h78q"]
+[ext_resource type="Texture2D" uid="uid://dniuir203h7hd" path="res://assets/images/election_main/Illustration53 (3).png" id="2_d75al"]
+[ext_resource type="Texture2D" uid="uid://1txl45b88hgl" path="res://assets/images/election_main/Illustration53 (4).png" id="3_p28mv"]
+[ext_resource type="Texture2D" uid="uid://dwyud4p30lwjn" path="res://assets/images/election_main/Illustration53.png" id="4_231sa"]
+[ext_resource type="Texture2D" uid="uid://bqidouutqa0xw" path="res://assets/images/election_main/Illustration53 (1).png" id="5_d75al"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nvk4i"]
 animations = [{

@@ -16,6 +16,7 @@ visible = false
 position = Vector2(490, 162)
 scale = Vector2(0.5, 0.5)
 
-[node name="River" parent="." unique_id=256900186 instance=ExtResource("4_jyhfs")]
-
 [node name="Node2D" parent="." unique_id=1823685871 instance=ExtResource("5_tbgi4")]
+
+[node name="River" parent="." unique_id=256900186 instance=ExtResource("4_jyhfs")]
+z_index = 150
