@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 TelegraphButtonStuff="*uid://dje1ybfetbkpy"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 ui_focus_next={

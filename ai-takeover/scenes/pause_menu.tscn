@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c02ieew0nt52q" path="res://scripts/pause_menu.gd" id="1_n87rw"]
 [ext_resource type="Shader" uid="uid://7rkd4deky1in" path="res://shaders/pause_menu_blur.gdshader" id="2_1s2dm"]
-[ext_resource type="Texture2D" uid="uid://cawyt4qo1bc5d" path="res://icon.svg" id="2_88e76"]
-[ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://images/button/Illustration50 (2).png" id="2_kukqi"]
-[ext_resource type="Texture2D" uid="uid://ch5eideia2mi0" path="res://images/button/Illustration50.png" id="2_myx47"]
-[ext_resource type="Texture2D" uid="uid://b5sb4w1ibapc4" path="res://images/button/Illustration50 (1).png" id="3_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://c04k1xc47kejl" path="res://assets/images/button/Illustration50 (3).png" id="3_ofnjo"]
+[ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://assets/images/button/Illustration50 (2).png" id="4_1rgno"]
 [ext_resource type="Script" uid="uid://d18ynwr7x5br2" path="res://scripts/pause_menu_resume.gd" id="4_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://b5sb4w1ibapc4" path="res://assets/images/button/Illustration50 (1).png" id="5_4hnlu"]
+[ext_resource type="Texture2D" uid="uid://iu1fvdwuhyso" path="res://assets/images/button/Illustration.png" id="6_3o3g3"]
 [ext_resource type="Script" uid="uid://c4vb2assg1dhg" path="res://scripts/pause_menu_quit.gd" id="6_v4r4p"]
+[ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="8_h5b1d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_88e76"]
 shader = ExtResource("2_1s2dm")
@@ -60,10 +61,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n87rw")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=356879689]
-position = Vector2(352, 383)
-texture = ExtResource("2_88e76")
-
 [node name="blur" type="ColorRect" parent="." unique_id=931613851]
 material = SubResource("ShaderMaterial_88e76")
 layout_mode = 1
@@ -100,10 +97,10 @@ grow_vertical = 2
 [node name="resume" type="TextureButton" parent="VBoxContainer" unique_id=1321088289]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("2_kukqi")
-texture_pressed = ExtResource("3_7l7mv")
-texture_hover = ExtResource("2_myx47")
-texture_focused = ExtResource("2_myx47")
+texture_normal = ExtResource("3_ofnjo")
+texture_pressed = ExtResource("4_1rgno")
+texture_hover = ExtResource("5_4hnlu")
+texture_focused = ExtResource("6_3o3g3")
 stretch_mode = 5
 script = ExtResource("4_5d2l8")
 
@@ -114,6 +111,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_h5b1d")
 theme_override_font_sizes/font_size = 42
 text = "Resume"
 horizontal_alignment = 1
@@ -122,10 +120,10 @@ vertical_alignment = 1
 [node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=274184941]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("2_kukqi")
-texture_pressed = ExtResource("3_7l7mv")
-texture_hover = ExtResource("2_myx47")
-texture_focused = ExtResource("2_myx47")
+texture_normal = ExtResource("3_ofnjo")
+texture_pressed = ExtResource("4_1rgno")
+texture_hover = ExtResource("5_4hnlu")
+texture_focused = ExtResource("6_3o3g3")
 stretch_mode = 5
 script = ExtResource("6_v4r4p")
 
@@ -136,6 +134,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_h5b1d")
 theme_override_font_sizes/font_size = 42
 text = "Quit"
 horizontal_alignment = 1
