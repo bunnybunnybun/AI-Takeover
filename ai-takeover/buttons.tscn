@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cjvon3oo7kncx"]
+
+[ext_resource type="Texture2D" uid="uid://cos82455q7bgx" path="res://assets/images/button-job-application/Illustration51 (2).png" id="1_3p1pc"]
+[ext_resource type="Script" uid="uid://bua6x6qxeqwfh" path="res://buttons.gd" id="1_ixhct"]
+[ext_resource type="Texture2D" uid="uid://2guu2q02ygjy" path="res://assets/images/button-job-application/Illustration51 (3).png" id="2_ixhct"]
+[ext_resource type="Texture2D" uid="uid://cpctkb3x5tsi6" path="res://assets/images/button-job-application/Illustration51 (1).png" id="3_ndr1n"]
+[ext_resource type="Texture2D" uid="uid://cy5es8gjkg16b" path="res://assets/images/button-job-application/Illustration51.png" id="4_7mpwi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smgxo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3p1pc")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3p1pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ixhct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ndr1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7mpwi")
+}],
+"loop": false,
+"name": &"off_to_on",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7mpwi")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7mpwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ndr1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ixhct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_3p1pc")
+}],
+"loop": false,
+"name": &"on_to_off",
+"speed": 15.0
+}]
+
+[node name="buttons" type="Node2D" unique_id=2124097961]
+script = ExtResource("1_ixhct")
+
+[node name="button2" type="AnimatedSprite2D" parent="." unique_id=2099862161]
+position = Vector2(629.7526, 305.82098)
+scale = Vector2(0.23210314, 0.23480606)
+sprite_frames = SubResource("SpriteFrames_smgxo")
+animation = &"off_to_on"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=545495707]
+offset_right = 40.0
+offset_bottom = 40.0
