@@ -15,7 +15,6 @@ func _process(delta):
 		time_held = 0
 	if time_held > 0.5:
 		print("2")
-		time_held = 0
 		var long_event = InputEventAction.new()
 		long_event.action = "ui_accept"
 		long_event.pressed = true
