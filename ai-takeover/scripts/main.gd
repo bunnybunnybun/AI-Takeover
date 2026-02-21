@@ -19,4 +19,5 @@ func _level_load ()-> void:
 		
 func _on_word_pushed(word) -> void: 
 	word_array.append(word.name)
+	word.queue_free()
 	print(word_array)
