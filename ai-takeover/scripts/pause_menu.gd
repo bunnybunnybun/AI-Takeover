@@ -11,8 +11,5 @@ func _input(event):
 
 func pause():
 	pause_menu.visible = true
+	$AnimationPlayer.play("pause_menu_fade_in")
 	get_tree().paused = true
-	
-#func resume():
-	#pause_menu.visible = false
-	#get_tree().paused = false
