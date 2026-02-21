@@ -109,7 +109,8 @@ func _ready() -> void:
 
 		area_2d.add_child(collision_rect)
 		area_2d.connect("area_entered", func(area):
-			emit_signal("word_pushed", n)
+			if area.is_in_group("word_pushed"):
+				emit_signal("word_pushed", n)
 		)
 		
 		n.add_child(area_2d)
