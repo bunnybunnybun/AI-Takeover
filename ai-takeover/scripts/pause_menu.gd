@@ -4,7 +4,7 @@ extends Control
 func _ready():
 	pause_menu.visible = false
 	
-func _input(event):
+func _input(_event):
 	if pause_menu.visible == false:
 		if Input.is_action_pressed("ui_accept"):
 			pause()

@@ -109,7 +109,8 @@ func _ready() -> void:
 
 		area_2d.add_child(collision_rect)
 		area_2d.connect("area_entered", func(area):
-			emit_signal("word_pushed", n)
+			if area.is_in_group("word_pushed"):
+				emit_signal("word_pushed", n)
 		)
 		
 		n.add_child(area_2d)
@@ -123,6 +124,7 @@ func _ready() -> void:
 		add_child(n)
 		
 		label_nodes.append(n)
+
 
 func shuffle_positions(except: Array):
 	var positions = []
@@ -150,12 +152,13 @@ func shuffle_positions(except: Array):
 				part.position.x = positions[i] - 18
 		i += 1
 	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	for node in label_nodes:
 		if node == null:
 			continue
 		for part in node.get_children():
-			part.position.x += 5
+			part.position.x += GlobalVariables.word_speed
 			if part.position.x > max_distance + get_viewport_rect().position.x:
 				part.position.x = get_viewport_rect().position.x - 200

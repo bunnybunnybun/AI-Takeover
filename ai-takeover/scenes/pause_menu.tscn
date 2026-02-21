@@ -2,13 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c02ieew0nt52q" path="res://scripts/pause_menu.gd" id="1_n87rw"]
 [ext_resource type="Shader" uid="uid://7rkd4deky1in" path="res://shaders/pause_menu_blur.gdshader" id="2_1s2dm"]
+[ext_resource type="Texture2D" uid="uid://cawyt4qo1bc5d" path="res://icon.svg" id="2_88e76"]
 [ext_resource type="Texture2D" uid="uid://c04k1xc47kejl" path="res://assets/images/button/Illustration50 (3).png" id="3_ofnjo"]
 [ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://assets/images/button/Illustration50 (2).png" id="4_1rgno"]
 [ext_resource type="Script" uid="uid://d18ynwr7x5br2" path="res://scripts/pause_menu_resume.gd" id="4_5d2l8"]
 [ext_resource type="Texture2D" uid="uid://b5sb4w1ibapc4" path="res://assets/images/button/Illustration50 (1).png" id="5_4hnlu"]
 [ext_resource type="Texture2D" uid="uid://iu1fvdwuhyso" path="res://assets/images/button/Illustration.png" id="6_3o3g3"]
-[ext_resource type="Script" uid="uid://c4vb2assg1dhg" path="res://scripts/pause_menu_quit.gd" id="6_v4r4p"]
+[ext_resource type="Script" path="res://scripts/pause_menu_quit.gd" id="6_v4r4p"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="8_h5b1d"]
+[ext_resource type="Script" path="res://scripts/settings_container.gd" id="11_h5b1d"]
+[ext_resource type="Script" path="res://scripts/medium.gd" id="13_1rgno"]
+[ext_resource type="Script" path="res://scripts/easy.gd" id="13_4hnlu"]
+[ext_resource type="Script" path="res://scripts/hard.gd" id="15_3o3g3"]
+[ext_resource type="Script" path="res://scripts/resume_button.gd" id="16_h5b1d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_88e76"]
 shader = ExtResource("2_1s2dm")
@@ -78,9 +84,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.19215687)
+color = Color(0, 0, 0, 0.25882354)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=522559068]
+[node name="main_container" type="VBoxContainer" parent="." unique_id=522559068]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -94,7 +100,7 @@ offset_bottom = 257.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="resume" type="TextureButton" parent="VBoxContainer" unique_id=1321088289]
+[node name="resume" type="TextureButton" parent="main_container" unique_id=1321088289]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("3_ofnjo")
@@ -104,7 +110,7 @@ texture_focused = ExtResource("6_3o3g3")
 stretch_mode = 5
 script = ExtResource("4_5d2l8")
 
-[node name="Label" type="Label" parent="VBoxContainer/resume" unique_id=961188972]
+[node name="Label" type="Label" parent="main_container/resume" unique_id=961188972]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,7 +123,33 @@ text = "Resume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=274184941]
+[node name="settings" type="TextureButton" parent="main_container" unique_id=1803410844]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_ofnjo")
+texture_pressed = ExtResource("4_1rgno")
+texture_hover = ExtResource("5_4hnlu")
+texture_focused = ExtResource("6_3o3g3")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="main_container/settings" unique_id=225976893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -1.0
+offset_right = 9.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_h5b1d")
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quit" type="TextureButton" parent="main_container" unique_id=274184941]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("3_ofnjo")
@@ -127,7 +159,7 @@ texture_focused = ExtResource("6_3o3g3")
 stretch_mode = 5
 script = ExtResource("6_v4r4p")
 
-[node name="Label" type="Label" parent="VBoxContainer/quit" unique_id=973174652]
+[node name="Label" type="Label" parent="main_container/quit" unique_id=973174652]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,13 +168,127 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("8_h5b1d")
 theme_override_font_sizes/font_size = 42
-text = "Quit"
+text = "Quit :("
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="settings_container" type="Control" parent="." unique_id=98382669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_h5b1d")
+
+[node name="settings_container" type="VBoxContainer" parent="settings_container" unique_id=1457625947]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.5
+offset_top = -260.75
+offset_right = 266.5
+offset_bottom = 260.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="settings_container/settings_container" unique_id=873135264]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Difficulty (speed of words moving) "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="settings_container/settings_container" unique_id=1075993182]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="easy" type="TextureButton" parent="settings_container/settings_container/HBoxContainer" unique_id=1446999512]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_88e76")
+stretch_mode = 5
+script = ExtResource("13_4hnlu")
+
+[node name="Label" type="Label" parent="settings_container/settings_container/HBoxContainer/easy" unique_id=1207426291]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.8862745, 0, 1)
+theme_override_fonts/font = ExtResource("8_h5b1d")
+theme_override_font_sizes/font_size = 42
+text = "Easy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="medium" type="TextureButton" parent="settings_container/settings_container/HBoxContainer" unique_id=792982597]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_88e76")
+stretch_mode = 5
+script = ExtResource("13_1rgno")
+
+[node name="Label" type="Label" parent="settings_container/settings_container/HBoxContainer/medium" unique_id=230060655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9839104, 0.8585221, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("8_h5b1d")
+theme_override_font_sizes/font_size = 42
+text = "Medium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hard" type="TextureButton" parent="settings_container/settings_container/HBoxContainer" unique_id=797016665]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_88e76")
+stretch_mode = 5
+script = ExtResource("15_3o3g3")
+
+[node name="Label" type="Label" parent="settings_container/settings_container/HBoxContainer/hard" unique_id=11495542]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9764706, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.9764706, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("8_h5b1d")
+theme_override_font_sizes/font_size = 42
+text = "Hard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resume_button" type="TextureButton" parent="settings_container" unique_id=1068030530]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 67.0
+offset_right = 481.0
+offset_bottom = 157.0
+texture_normal = ExtResource("2_88e76")
+script = ExtResource("16_h5b1d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=137200537]
 libraries/ = SubResource("AnimationLibrary_71k7c")
 
-[connection signal="pressed" from="VBoxContainer/resume" to="VBoxContainer/resume" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer/quit" method="_on_pressed"]
-[connection signal="animation_finished" from="AnimationPlayer" to="VBoxContainer/resume" method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="main_container/resume" to="main_container/resume" method="_on_pressed"]
+[connection signal="pressed" from="main_container/settings" to="main_container/settings" method="_on_pressed"]
+[connection signal="pressed" from="main_container/quit" to="main_container/quit" method="_on_pressed"]
+[connection signal="pressed" from="settings_container/settings_container/HBoxContainer/easy" to="settings_container/settings_container/HBoxContainer/easy" method="_on_pressed"]
+[connection signal="pressed" from="settings_container/settings_container/HBoxContainer/medium" to="settings_container/settings_container/HBoxContainer/medium" method="_on_pressed"]
+[connection signal="pressed" from="settings_container/settings_container/HBoxContainer/hard" to="settings_container/settings_container/HBoxContainer/hard" method="_on_pressed"]
+[connection signal="pressed" from="settings_container/resume_button" to="settings_container/resume_button" method="_on_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="main_container/resume" method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="settings_container/resume_button" method="_on_animation_player_animation_finished"]
