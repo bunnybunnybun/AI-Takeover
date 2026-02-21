@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://cnuw1e3cgo8as"]
+
+[ext_resource type="Script" uid="uid://e038kqrhmd3p" path="res://scenes/intro.gd" id="1_45dpb"]
+[ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="2_hc7eg"]
+
+[sub_resource type="Gradient" id="Gradient_45dpb"]
+interpolation_mode = 1
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hc7eg"]
+gradient = SubResource("Gradient_45dpb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqbct"]
+bg_color = Color(0.41960785, 0.6666667, 0.81960785, 0.26666668)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Intro" type="Control" unique_id=1800601347]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_45dpb")
+
+[node name="Control" type="Control" parent="." unique_id=1394514444]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=335954599]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_hc7eg")
+
+[node name="label" type="RichTextLabel" parent="Control" unique_id=1445635360]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -325.0
+offset_right = 576.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 100
+text = "Welcome AI..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next" type="Panel" parent="Control" unique_id=1130867345]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 541.0
+offset_right = 1127.0
+offset_bottom = 617.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_aqbct")
+
+[node name="short-press" type="Label" parent="Control/next" unique_id=1293730996]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 8.0
+offset_right = -28.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_hc7eg")
+theme_override_font_sizes/font_size = 50
+text = "Press to Skip"
+
+[node name="cursor" type="Label" parent="Control/next" unique_id=1329418731]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 314.0
+offset_right = 241.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 46
+text = "|"
+
+[node name="fade" type="ColorRect" parent="Control" unique_id=1900800404]
+modulate = Color(1, 1, 1, 0)
+z_index = 300
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.17642921, 0.3601551, 0.28155243, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=953126788]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
