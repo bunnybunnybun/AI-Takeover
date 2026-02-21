@@ -114,7 +114,7 @@ func _ready() -> void:
 		collision_rect.shape = rectangle_shape
 		
 		area_2d.add_child(collision_rect)
-		area_2d.connect("body_entered", func():
+		area_2d.connect("area_entered", func():
 			emit_signal("word_pushed", n)
 		)
 		
