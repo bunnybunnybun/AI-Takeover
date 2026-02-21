@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ddl6tvnuar0i7" path="res://scenes/main_menu.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b4t8lkx0h57yd" path="res://scenes/word_push.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://omny4bnx80le" path="res://scenes/river.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://brx3uxf64o48t" path="res://background_elections.tscn" id="5_tbgi4"]
 
 [node name="main" type="Node2D" unique_id=1916585667]
 script = ExtResource("1_o5qli")
@@ -16,3 +17,5 @@ position = Vector2(540, 150)
 scale = Vector2(0.5, 0.5)
 
 [node name="River" parent="." unique_id=256900186 instance=ExtResource("4_jyhfs")]
+
+[node name="Node2D" parent="." unique_id=1823685871 instance=ExtResource("5_tbgi4")]

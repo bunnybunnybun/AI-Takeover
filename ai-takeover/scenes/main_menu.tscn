@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddl6tvnuar0i7"]
 
 [ext_resource type="Texture2D" uid="uid://cawyt4qo1bc5d" path="res://icon.svg" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://clps3td1hnds0" path="res://images/Animation_0000.png" id="2_8ln24"]
+[ext_resource type="Texture2D" uid="uid://clps3td1hnds0" path="res://images/hand/Animation_0000.png" id="2_8ln24"]
 [ext_resource type="Script" uid="uid://0qgfs5uw3bn1" path="res://scripts/quit.gd" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://df61x37rfu7v8" path="res://scripts/play.gd" id="2_wu84c"]
 
@@ -10,6 +10,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 264.0
+offset_top = -4.0
+offset_right = 264.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 

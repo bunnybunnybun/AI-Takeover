@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.frame = 0 
 		animated_sprite_2d.play("hand_grab")
 		await animated_sprite_2d.animation_finished
+		await get_tree().create_timer(0.3).timeout
 		visible = false
