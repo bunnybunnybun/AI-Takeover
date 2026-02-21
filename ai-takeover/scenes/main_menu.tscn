@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://ddl6tvnuar0i7"]
 
-[ext_resource type="Texture2D" uid="uid://ch5eideia2mi0" path="res://images/button/Illustration50.png" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://b5sb4w1ibapc4" path="res://images/button/Illustration50 (1).png" id="2_8ln24"]
+[ext_resource type="Texture2D" uid="uid://c04k1xc47kejl" path="res://assets/images/button/Illustration50 (3).png" id="1_oa1go"]
 [ext_resource type="Script" uid="uid://0qgfs5uw3bn1" path="res://scripts/quit.gd" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://df61x37rfu7v8" path="res://scripts/play.gd" id="2_wu84c"]
-[ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://images/button/Illustration50 (2).png" id="5_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://b5sb4w1ibapc4" path="res://assets/images/button/Illustration50 (1).png" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://iu1fvdwuhyso" path="res://assets/images/button/Illustration.png" id="4_tbmy8"]
+[ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="5_jk1qb"]
+[ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://assets/images/button/Illustration50 (2).png" id="5_rtw2f"]
 
 [node name="main_menu" type="Control" unique_id=1618483000]
 layout_mode = 3
@@ -31,10 +33,10 @@ grow_vertical = 2
 [node name="play" type="TextureButton" parent="VBoxContainer" unique_id=1850530869]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("5_rtw2f")
-texture_pressed = ExtResource("2_8ln24")
-texture_hover = ExtResource("1_wu84c")
-texture_focused = ExtResource("1_wu84c")
+texture_normal = ExtResource("1_oa1go")
+texture_pressed = ExtResource("5_rtw2f")
+texture_hover = ExtResource("3_tbmy8")
+texture_focused = ExtResource("4_tbmy8")
 stretch_mode = 5
 script = ExtResource("2_wu84c")
 
@@ -43,9 +45,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -7.0
+offset_right = 3.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("5_jk1qb")
+theme_override_font_sizes/font_size = 60
 text = "Play"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -53,10 +60,10 @@ vertical_alignment = 1
 [node name="settings" type="TextureButton" parent="VBoxContainer" unique_id=1064052194]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("5_rtw2f")
-texture_pressed = ExtResource("2_8ln24")
-texture_hover = ExtResource("1_wu84c")
-texture_focused = ExtResource("1_wu84c")
+texture_normal = ExtResource("1_oa1go")
+texture_pressed = ExtResource("5_rtw2f")
+texture_hover = ExtResource("3_tbmy8")
+texture_focused = ExtResource("4_tbmy8")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="VBoxContainer/settings" unique_id=690752774]
@@ -64,9 +71,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -1.0
+offset_right = 9.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("5_jk1qb")
+theme_override_font_sizes/font_size = 50
 text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -74,10 +86,10 @@ vertical_alignment = 1
 [node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=1751975841]
 layout_mode = 2
 size_flags_vertical = 3
-texture_normal = ExtResource("5_rtw2f")
-texture_pressed = ExtResource("2_8ln24")
-texture_hover = ExtResource("1_wu84c")
-texture_focused = ExtResource("1_wu84c")
+texture_normal = ExtResource("1_oa1go")
+texture_pressed = ExtResource("5_rtw2f")
+texture_hover = ExtResource("3_tbmy8")
+texture_focused = ExtResource("4_tbmy8")
 stretch_mode = 5
 script = ExtResource("2_bqqt6")
 
@@ -88,7 +100,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 42
+theme_override_fonts/font = ExtResource("5_jk1qb")
+theme_override_font_sizes/font_size = 60
 text = "Quit :("
 horizontal_alignment = 1
 vertical_alignment = 1

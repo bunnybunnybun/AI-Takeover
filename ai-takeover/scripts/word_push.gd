@@ -18,4 +18,5 @@ func _process(delta: float) -> void:
 		tween.tween_property(self, "position", position + Vector2(0,-200), 0.25)
 		tween.tween_property(self, "position", position, 0.25)
 		await animated_sprite_2d.animation_finished
+		await get_tree().create_timer(0.3).timeout
 		visible = false
