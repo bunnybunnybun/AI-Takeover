@@ -71,7 +71,7 @@ func _ready() -> void:
 		l.text = word
 		l.add_theme_font_size_override("font_size", 60)
 		l.position.x = i * max_distance / len(words) + get_viewport_rect().position.x
-		l.position.y = get_viewport_rect().size.y / 2 + get_viewport_rect().position.y
+		l.position.y = get_viewport_rect().size.y * 0.1 + get_viewport_rect().position.y
 		
 		n.add_child(l)
 		l.add_to_group("labels")
