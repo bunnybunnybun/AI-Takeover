@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://ddl6tvnuar0i7"]
 
 [ext_resource type="Texture2D" uid="uid://cawyt4qo1bc5d" path="res://icon.svg" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://clps3td1hnds0" path="res://images/Animation_0000.png" id="2_8ln24"]
 [ext_resource type="Script" uid="uid://0qgfs5uw3bn1" path="res://scripts/quit.gd" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://df61x37rfu7v8" path="res://scripts/play.gd" id="2_wu84c"]
-[ext_resource type="PackedScene" uid="uid://x4b5geqgt1ku" path="res://scenes/pause_menu.tscn" id="4_wu84c"]
 
 [node name="main_menu" type="Control" unique_id=1618483000]
 layout_mode = 3
@@ -31,6 +31,8 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("1_ekxnf")
+texture_hover = ExtResource("2_8ln24")
+texture_focused = ExtResource("2_8ln24")
 stretch_mode = 5
 script = ExtResource("2_wu84c")
 
@@ -38,17 +40,18 @@ script = ExtResource("2_wu84c")
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("1_ekxnf")
+texture_hover = ExtResource("2_8ln24")
+texture_focused = ExtResource("2_8ln24")
 stretch_mode = 5
 
 [node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=1751975841]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("1_ekxnf")
+texture_hover = ExtResource("2_8ln24")
+texture_focused = ExtResource("2_8ln24")
 stretch_mode = 5
 script = ExtResource("2_bqqt6")
-
-[node name="pause_menu" parent="." unique_id=1764987467 instance=ExtResource("4_wu84c")]
-layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/play" to="VBoxContainer/play" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit" to="VBoxContainer/quit" method="_on_pressed"]
