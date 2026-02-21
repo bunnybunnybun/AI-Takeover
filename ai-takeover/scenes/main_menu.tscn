@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddl6tvnuar0i7"]
 
 [ext_resource type="Texture2D" uid="uid://ch5eideia2mi0" path="res://images/button/Illustration50.png" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://b5sb4w1ibapc4" path="res://images/button/Illustration50 (1).png" id="2_8ln24"]
 [ext_resource type="Script" uid="uid://0qgfs5uw3bn1" path="res://scripts/quit.gd" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://df61x37rfu7v8" path="res://scripts/play.gd" id="2_wu84c"]
 [ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://images/button/Illustration50 (2).png" id="5_rtw2f"]
@@ -31,6 +32,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("5_rtw2f")
+texture_pressed = ExtResource("2_8ln24")
 texture_hover = ExtResource("1_wu84c")
 texture_focused = ExtResource("1_wu84c")
 stretch_mode = 5
@@ -52,6 +54,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("5_rtw2f")
+texture_pressed = ExtResource("2_8ln24")
 texture_hover = ExtResource("1_wu84c")
 texture_focused = ExtResource("1_wu84c")
 stretch_mode = 5
@@ -72,6 +75,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("5_rtw2f")
+texture_pressed = ExtResource("2_8ln24")
 texture_hover = ExtResource("1_wu84c")
 texture_focused = ExtResource("1_wu84c")
 stretch_mode = 5
