@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cnuw1e3cgo8as"]
 
-[ext_resource type="Script" uid="uid://e038kqrhmd3p" path="res://scenes/intro.gd" id="1_45dpb"]
+[ext_resource type="Script" uid="uid://e038kqrhmd3p" path="res://scripts/intro.gd" id="1_45dpb"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="2_hc7eg"]
 
 [sub_resource type="Gradient" id="Gradient_45dpb"]

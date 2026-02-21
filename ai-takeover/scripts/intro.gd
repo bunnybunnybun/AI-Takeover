@@ -6,10 +6,10 @@ extends Control
 var faded = false
 var tween
 var count = 0
-var text_array = [" Your Prompt is Simple. \n Get Justice"]
+var text_array = [" Your Prompt is Simple. \n Get Justice", "The world needs logic. \n Not corruption", "The world needs you AI.", "And the only way is to \n control the government"]
 var just_pressed = false
 var elapsed_time = 0.0
-
+var index = 0 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	label.visible_ratio = 0.0
@@ -18,8 +18,13 @@ func _ready() -> void:
 	faded = true
 	_load_text(label)
 func _next_button() -> void: 
-	label.text = text_array[0]
-	_load_text(label)
+	if index <= 3:
+		label.text = text_array[index]
+		_load_text(label)
+		index += 1
+	else:
+		fade_into(0.0)
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 func _load_text(text) -> void:
 	tween = create_tween()
 	var duration = 0.5+(0.06* text.text.length())
@@ -54,8 +59,5 @@ func fade_into (alpha:float) -> void:
 	var tween_fade := create_tween()
 	tween_fade.tween_property(fade, "modulate:a",alpha, 3.0)
 	await tween_fade.finished
-
-
-
 func _on_timer_timeout() -> void:
 	just_pressed = false
