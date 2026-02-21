@@ -4,16 +4,16 @@ var score
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	_level_load()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if len(word_array) == 5:
+	if word_array.size() == 5:
 		if word_array == ["I","Will","Help","The","Nation"]:
 			score += 1
 		
-func _level_load (level)-> void: 
+func _level_load ()-> void: 
 	var words = get_node_or_null("words")
 	if words: 
 		for word in words: 

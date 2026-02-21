@@ -53,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_xw2lp")
 }],
-"loop": true,
+"loop": false,
 "name": &"hand_grab",
 "speed": 25.0
 }]
@@ -75,3 +75,5 @@ frame_progress = 0.88500684
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1499491709]
 position = Vector2(-13.75, 3.5)
 shape = SubResource("RectangleShape2D_qadu5")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

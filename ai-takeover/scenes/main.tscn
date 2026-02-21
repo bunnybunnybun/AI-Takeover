@@ -1,6 +1,18 @@
 [gd_scene format=3 uid="uid://bvp70gnr1l6bm"]
 
 [ext_resource type="Script" uid="uid://w7s4eeivyw7l" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://ddl6tvnuar0i7" path="res://scenes/main_menu.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://b4t8lkx0h57yd" path="res://scenes/word_push.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://omny4bnx80le" path="res://scenes/river.tscn" id="4_jyhfs"]
 
 [node name="main" type="Node2D" unique_id=1916585667]
 script = ExtResource("1_o5qli")
+
+[node name="main_menu" parent="." unique_id=1618483000 instance=ExtResource("2_sugp2")]
+visible = false
+
+[node name="WordPush" parent="." unique_id=379484559 instance=ExtResource("3_jyhfs")]
+position = Vector2(540, 150)
+scale = Vector2(0.5, 0.5)
+
+[node name="River" parent="." unique_id=256900186 instance=ExtResource("4_jyhfs")]
