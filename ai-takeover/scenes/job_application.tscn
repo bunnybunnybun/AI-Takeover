@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://f6a8laanrln1"]
+
+[ext_resource type="Script" uid="uid://dyllvcv4bktp4" path="res://scripts/job_application.gd" id="1_bgl4v"]
+[ext_resource type="PackedScene" uid="uid://cjvon3oo7kncx" path="res://buttons.tscn" id="2_gfah6"]
+
+[node name="JobApplication" type="Node2D" unique_id=469835976]
+script = ExtResource("1_bgl4v")
+
+[node name="buttons" type="Node2D" parent="." unique_id=1397708576]
+
+[node name="button1" parent="buttons" unique_id=2124097961 instance=ExtResource("2_gfah6")]
+position = Vector2(2, -199)
+
+[node name="button2" parent="buttons" unique_id=1587194615 instance=ExtResource("2_gfah6")]
+position = Vector2(2, -102)
+
+[node name="button3" parent="buttons" unique_id=487665872 instance=ExtResource("2_gfah6")]
+position = Vector2(5, 1)
+
+[node name="button4" parent="buttons" unique_id=273913058 instance=ExtResource("2_gfah6")]
+position = Vector2(5, 98)

@@ -119,5 +119,7 @@ mouse_filter = 1
 color = Color(0.17642921, 0.3601551, 0.28155243, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=953126788]
+wait_time = 0.3
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
