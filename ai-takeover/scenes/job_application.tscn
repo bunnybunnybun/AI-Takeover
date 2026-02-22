@@ -1,151 +1,66 @@
 [gd_scene format=3 uid="uid://f6a8laanrln1"]
 
-[ext_resource type="Script" uid="uid://dyllvcv4bktp4" path="res://scripts/job_application.gd" id="1_bgl4v"]
-[ext_resource type="PackedScene" uid="uid://cjvon3oo7kncx" path="res://scenes/buttons.tscn" id="2_gfah6"]
-[ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="3_b8wht"]
-[ext_resource type="Script" uid="uid://ce2cf25p5se7a" path="res://scripts/camera.gd" id="4_0flep"]
-[ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://assets/images/button/Illustration50 (2).png" id="5_bgl4v"]
+[ext_resource type="Script" uid="uid://w7s4eeivyw7l" path="res://scripts/main.gd" id="1_0my6r"]
+[ext_resource type="PackedScene" uid="uid://ddl6tvnuar0i7" path="res://scenes/main_menu.tscn" id="2_gdpa3"]
+[ext_resource type="PackedScene" uid="uid://omny4bnx80le" path="res://scenes/river.tscn" id="3_i8u4c"]
+[ext_resource type="PackedScene" uid="uid://bb4mytwoapkj2" path="res://background_elections.tscn" id="4_d1hrq"]
+[ext_resource type="PackedScene" uid="uid://b4t8lkx0h57yd" path="res://scenes/word_push.tscn" id="5_37ftc"]
+[ext_resource type="PackedScene" uid="uid://x4b5geqgt1ku" path="res://scenes/pause_menu.tscn" id="6_ofl62"]
+[ext_resource type="Script" uid="uid://b85b6ey3oc1c8" path="res://scripts/color_changer.gd" id="7_sh83k"]
+[ext_resource type="Script" uid="uid://r32ssmhuvrl8" path="res://scripts/opponent_score.gd" id="8_gcjpa"]
 
-[node name="JobApplication" type="Node2D" unique_id=469835976]
-script = ExtResource("1_bgl4v")
+[sub_resource type="Theme" id="Theme_tefeu"]
+default_font_size = 45
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=495249305]
-offset_left = -1125.0
-offset_top = -910.0
-offset_right = 1977.0
-offset_bottom = 2511.0
-color = Color(0.72156864, 0.9254902, 0.92156863, 0.91764706)
+[sub_resource type="Theme" id="Theme_85g3d"]
+default_font_size = 45
 
-[node name="Title" type="Label" parent="." unique_id=557952720]
-offset_left = -528.0
-offset_top = -194.0
-offset_right = 871.0
-offset_bottom = 47.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.39578143, 0.45652127, 0.6117548, 1)
-theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 90
-text = "PRESIDENT APPLICATION FORM"
+[node name="main" type="Control" unique_id=457717841]
+layout_mode = 3
+anchors_preset = 0
+focus_mode = 2
+mouse_filter = 2
+script = ExtResource("1_0my6r")
 
-[node name="buttons" type="Node2D" parent="." unique_id=1397708576]
-position = Vector2(-426, 184)
-
-[node name="button1" parent="buttons" unique_id=2124097961 instance=ExtResource("2_gfah6")]
-position = Vector2(417, -122)
-
-[node name="button2" parent="buttons" unique_id=1587194615 instance=ExtResource("2_gfah6")]
-position = Vector2(418, 181)
-
-[node name="button3" parent="buttons" unique_id=487665872 instance=ExtResource("2_gfah6")]
-position = Vector2(420, 467)
-
-[node name="button4" parent="buttons" unique_id=273913058 instance=ExtResource("2_gfah6")]
-position = Vector2(424, 734)
-
-[node name="button5" parent="buttons" unique_id=1905754883 instance=ExtResource("2_gfah6")]
-position = Vector2(425, 995)
-
-[node name="labels" type="Node2D" parent="." unique_id=184894163]
-position = Vector2(-426, 184)
-
-[node name="Label4" type="Label" parent="labels" unique_id=1481260833]
-offset_left = 387.0
-offset_top = -178.0
-offset_right = 693.0
-offset_bottom = -65.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 35
-text = "Do olives taste
-Good?"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label5" type="Label" parent="labels" unique_id=529199567]
-offset_left = 383.0
-offset_top = 691.0
-offset_right = 585.0
-offset_bottom = 772.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 35
-text = "Are you 
-a robot?"
-
-[node name="Label6" type="Label" parent="labels" unique_id=270969363]
-offset_left = 392.0
-offset_top = 434.0
-offset_right = 606.0
-offset_bottom = 515.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 35
-text = "Do olives taste
-Good?"
-
-[node name="Label7" type="Label" parent="labels" unique_id=1888097487]
-offset_left = 393.0
-offset_top = 144.0
-offset_right = 595.0
-offset_bottom = 219.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 35
-text = "Do olives taste
-Good?"
-
-[node name="Label9" type="Label" parent="labels" unique_id=817682999]
-offset_left = 393.0
-offset_top = 955.0
-offset_right = 607.0
-offset_bottom = 1036.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 45
-text = "Submit?"
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=165643810]
-unique_name_in_owner = true
-position_smoothing_enabled = true
-script = ExtResource("4_0flep")
-
-[node name="try_again" type="Node2D" parent="." unique_id=1047300194]
+[node name="main_menu" parent="." unique_id=1618483000 instance=ExtResource("2_gdpa3")]
 visible = false
+layout_mode = 1
+mouse_filter = 1
 
-[node name="bg" type="TextureRect" parent="try_again" unique_id=1867195342]
-texture_filter = 1
-offset_left = -1290.0
-offset_top = -786.0
-offset_right = 1176.0
-offset_bottom = 808.0
-texture = ExtResource("5_bgl4v")
+[node name="River" parent="." unique_id=256900186 instance=ExtResource("3_i8u4c")]
+z_index = 150
 
-[node name="Button" type="Button" parent="try_again" unique_id=963409946]
-offset_left = -313.0
-offset_top = -159.0
-offset_right = 287.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 100
-text = "Try again!"
+[node name="Node2D" parent="." unique_id=1823685871 instance=ExtResource("4_d1hrq")]
 
-[node name="win" type="Node2D" parent="." unique_id=1747261686]
-visible = false
+[node name="WordPush" parent="." unique_id=379484559 instance=ExtResource("5_37ftc")]
+position = Vector2(490, 162)
+scale = Vector2(0.5, 0.5)
 
-[node name="bg" type="TextureRect" parent="win" unique_id=822063117]
-texture_filter = 1
-offset_left = -1472.0
-offset_top = -1081.0
-offset_right = 1445.0
-offset_bottom = 1094.0
-texture = ExtResource("5_bgl4v")
+[node name="pause_menu" parent="." unique_id=1764987467 instance=ExtResource("6_ofl62")]
+z_index = 600
+layout_mode = 1
+offset_left = 586.0
+offset_top = 336.0
+offset_right = 586.0
+offset_bottom = 336.0
+mouse_filter = 1
 
-[node name="Button2" type="Button" parent="win" unique_id=1545525672]
-offset_left = -247.0
-offset_top = -124.0
-offset_right = 379.0
-offset_bottom = 146.0
-theme_override_font_sizes/font_size = 100
-text = "Move on:"
+[node name="Score" type="Label" parent="." unique_id=1087720936]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 140.0
+offset_right = 297.0
+offset_bottom = 210.0
+theme = SubResource("Theme_tefeu")
+text = "0"
+script = ExtResource("7_sh83k")
 
-[connection signal="button_down" from="try_again/Button" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="win/Button2" to="." method="_on_button_2_button_down"]
+[node name="Opponent Score" type="Label" parent="Score" unique_id=34860430]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 9.0
+offset_right = 650.0
+offset_bottom = 72.0
+theme = SubResource("Theme_85g3d")
+text = "0"
+script = ExtResource("8_gcjpa")
