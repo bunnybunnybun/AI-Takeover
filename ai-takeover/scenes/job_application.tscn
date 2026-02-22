@@ -19,3 +19,26 @@ position = Vector2(5, 1)
 
 [node name="button4" parent="buttons" unique_id=273913058 instance=ExtResource("2_gfah6")]
 position = Vector2(5, 98)
+
+[node name="labels" type="Node2D" parent="." unique_id=184894163]
+
+[node name="Label" type="Label" parent="labels" unique_id=46707509]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Do you like Godot"
+
+[node name="Label2" type="Label" parent="labels" unique_id=212047867]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label3" type="Label" parent="labels" unique_id=1929721598]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label4" type="Label" parent="labels" unique_id=1481260833]
+offset_left = 587.0
+offset_top = 57.0
+offset_right = 738.0
+offset_bottom = 108.0
+text = "Are Olives Yummy or Not?
+"
