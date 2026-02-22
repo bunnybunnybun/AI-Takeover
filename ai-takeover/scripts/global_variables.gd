@@ -2,6 +2,7 @@ extends Node
 
 var difficulty = "easy"
 var word_speed = 8
+var opponent_score = 0
 
 var good_words = [
 	"Money",

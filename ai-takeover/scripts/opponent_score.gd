@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 	if score_change == 0:
 		score_change = 60
 		var _player_score = int($"..".text)
-		var diff_score = RandomNumberGenerator.new().randi_range(-2, 3)
-		text = str(int(text) + diff_score)
+		GlobalVariables.opponent_score = RandomNumberGenerator.new().randi_range(-2, 3)
+		text = str(int(text) + GlobalVariables.opponent_score)
 		
 		

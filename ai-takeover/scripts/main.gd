@@ -12,6 +12,7 @@ var can_pickup = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_level_load()
+	$Control.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -39,7 +40,13 @@ func _on_word_pushed(word) -> void:
 		return
 	$speech_bubble/speech.text += str(word.name) + " "
 	if $speech_bubble/speech.get_total_character_count() > 100:
-		get_tree().change_scene_to_file("res://scenes/job_application.tscn")
+		$Control.visible = true
+		if score >= GlobalVariables.opponent_score:
+			$Control/Label.text = "Congrats, the people liked your speech best!"
+			$Control/Label2.visible = true
+		elif score < GlobalVariables.opponent_score:
+			$Control/Label.text = "YOU LOSE, LOL! People didn't like your speech..."
+		#get_tree().change_scene_to_file("res://scenes/job_application.tscn")
 		return
 	can_pickup = false
 	word_array.append(word.name)

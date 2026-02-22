@@ -24,6 +24,9 @@ func _ready() -> void:
 		l.name = "Label"
 		l.text = word
 		l.add_theme_font_size_override("font_size", 60)
+		l.add_theme_color_override("font_color", "black")
+		l.add_theme_color_override("font_outline", "white")
+		l.add_theme_constant_override("outline_size", 5)
 		
 		
 		n.position.x = i * max_distance / count + get_viewport_rect().position.x
