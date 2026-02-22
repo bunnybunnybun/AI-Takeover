@@ -11,6 +11,6 @@ func _input(_event):
 
 func pause():
 	pause_menu.visible = true
+	get_node("main_container/settings").grab_focus()
 	$AnimationPlayer.play("pause_menu_fade_in")
 	get_tree().paused = true
-	grab_focus()
