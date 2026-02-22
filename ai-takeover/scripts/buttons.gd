@@ -8,8 +8,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		print("clicked")
 		emit_signal("is_clicked", self)
 	if Input.is_action_just_pressed("ui_focus_next"):
-		print("short click")
 		emit_signal("is_short_clicked",self.name)
