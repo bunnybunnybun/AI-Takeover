@@ -42,15 +42,12 @@ func _unhandled_input(event: InputEvent) -> void:
 				tween.kill()
 				label.visible_ratio = 1.0
 				count += 1
-				print("count 0")
 				return
 			elif count == 1:
 				label.visible_ratio = 0.0
 				_next_button()
 				count -= 1 
-				print("count 1")
 				return
-		print(count)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#making the cursor flicker all the time
@@ -64,4 +61,3 @@ func fade_into (alpha:float) -> void:
 	await tween_fade.finished
 func _on_timer_timeout() -> void:
 	just_pressed = false
-	print("count reset")

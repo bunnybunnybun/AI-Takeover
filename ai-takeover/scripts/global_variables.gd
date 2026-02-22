@@ -12,7 +12,9 @@ var good_words = [
 	"Nation",
 	"President",
 	"History",
-	"Hackclub"
+	"Hackclub",
+	"Bueno",
+	"Amigos",
 ]
 
 var bad_words = [
@@ -22,6 +24,9 @@ var bad_words = [
 	"Dirt",
 	"Grime",
 	"Catacombs",
-	"Dictator"
+	"Dictator",
+	"Mal",
+	"Feo",
+	"YMCA",
 ]
 var hand_speed = 1
