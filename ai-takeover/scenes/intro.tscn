@@ -119,21 +119,21 @@ texture = SubResource("GradientTexture1D_hc7eg")
 [node name="label" type="RichTextLabel" parent="Control" unique_id=1445635360]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.49600002
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -527.0
-offset_top = -325.0
-offset_right = 625.0
-offset_bottom = 320.0
+anchor_bottom = 0.49600002
+offset_left = -500.0
+offset_top = -282.40802
+offset_right = 652.0
+offset_bottom = 362.59198
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_hc7eg")
-theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/normal_font_size = 80
 text = "AI Takeover"
 vertical_alignment = 1
 
@@ -180,6 +180,7 @@ theme_override_font_sizes/font_size = 46
 text = "|"
 
 [node name="fade" type="ColorRect" parent="Control" unique_id=1900800404]
+visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 300
 layout_mode = 1
@@ -191,7 +192,7 @@ offset_right = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-color = Color(0.17642921, 0.3601551, 0.28155243, 1)
+color = Color(0.14807746, 0.14381525, 0.11194108, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=1642054817]
 wait_time = 0.3
