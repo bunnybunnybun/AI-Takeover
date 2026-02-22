@@ -6,7 +6,7 @@ extends Control
 var faded = false
 var tween
 var count = 0
-var text_array = [" Your Prompt is Simple. \n Get Justice", "The world needs logic. \n Not corruption", "The world needs you AI.", "And the only way is to \n control the government"]
+var text_array = ["Welcome AI...", "Your Prompt is Simple. \n Get Justice", "The world needs logic. \n Not corruption", "The world needs you AI.", "And the only way is to \n control the government", "Step one, election"]
 var just_pressed = false
 var elapsed_time = 0.0
 var index = 0 
@@ -18,7 +18,7 @@ func _ready() -> void:
 	faded = true
 	_load_text(label)
 func _next_button() -> void: 
-	if index <= 3:
+	if index <= text_array.size()-1:
 		label.text = text_array[index]
 		_load_text(label)
 		index += 1
