@@ -17,10 +17,10 @@ offset_bottom = 2511.0
 color = Color(0.72156864, 0.9254902, 0.92156863, 0.91764706)
 
 [node name="Title" type="Label" parent="." unique_id=557952720]
-offset_left = -528.0
-offset_top = -194.0
-offset_right = 871.0
-offset_bottom = 47.0
+offset_left = -500.0
+offset_top = -258.0
+offset_right = 899.0
+offset_bottom = -17.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.39578143, 0.45652127, 0.6117548, 1)
 theme_override_constants/outline_size = 12
@@ -56,32 +56,32 @@ offset_right = 693.0
 offset_bottom = -65.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 35
-text = "Do olives taste
-Good?"
+theme_override_font_sizes/font_size = 25
+text = "Do olives
+taste Good?"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" type="Label" parent="labels" unique_id=529199567]
-offset_left = 383.0
-offset_top = 691.0
-offset_right = 585.0
-offset_bottom = 772.0
+offset_left = 400.0
+offset_top = 685.0
+offset_right = 602.0
+offset_bottom = 766.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 25
 text = "Are you 
 a robot?"
 
 [node name="Label6" type="Label" parent="labels" unique_id=270969363]
-offset_left = 392.0
-offset_top = 434.0
-offset_right = 606.0
-offset_bottom = 515.0
+offset_left = 367.0
+offset_top = 415.0
+offset_right = 614.0
+offset_bottom = 496.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 35
-text = "Do olives taste
-Good?"
+theme_override_font_sizes/font_size = 25
+text = "Will you help the 
+nation?"
 
 [node name="Label7" type="Label" parent="labels" unique_id=1888097487]
 offset_left = 393.0
@@ -90,9 +90,8 @@ offset_right = 595.0
 offset_bottom = 219.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 35
-text = "Do olives taste
-Good?"
+theme_override_font_sizes/font_size = 25
+text = "Are you 35+?"
 
 [node name="Label9" type="Label" parent="labels" unique_id=817682999]
 offset_left = 393.0
@@ -125,6 +124,7 @@ offset_left = -313.0
 offset_top = -159.0
 offset_right = 287.0
 offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_b8wht")
 theme_override_font_sizes/font_size = 100
 text = "Try again!"
 
@@ -139,13 +139,13 @@ offset_right = 1445.0
 offset_bottom = 1094.0
 texture = ExtResource("5_bgl4v")
 
-[node name="Button2" type="Button" parent="win" unique_id=1545525672]
-offset_left = -247.0
-offset_top = -124.0
-offset_right = 379.0
-offset_bottom = 146.0
+[node name="Button2" type="Label" parent="win" unique_id=1012387536]
+offset_left = -280.0
+offset_top = -123.0
+offset_right = 346.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("3_b8wht")
 theme_override_font_sizes/font_size = 100
-text = "Move on:"
+text = "You Win!!"
 
 [connection signal="button_down" from="try_again/Button" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="win/Button2" to="." method="_on_button_2_button_down"]

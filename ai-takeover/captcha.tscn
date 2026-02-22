@@ -160,11 +160,6 @@ position = Vector2(148.06125, 158.3175)
 scale = Vector2(0.14726406, 0.15112658)
 texture = ExtResource("2_wdqf6")
 
-[node name="Illustration55(7)" type="Sprite2D" parent="." unique_id=869550234]
-position = Vector2(117, 481)
-scale = Vector2(0.41374996, 0.4275002)
-texture = ExtResource("8_rwgvx")
-
 [node name="Sprite2D8" type="Sprite2D" parent="." unique_id=688960297]
 position = Vector2(477.95108, 482.48846)
 scale = Vector2(0.43524447, 0.41244236)
@@ -174,6 +169,11 @@ texture = ExtResource("9_2i1h1")
 position = Vector2(300.00003, 476.99997)
 scale = Vector2(0.41875, 0.4300001)
 texture = ExtResource("10_0ik70")
+
+[node name="Illustration55(7)" type="Sprite2D" parent="." unique_id=869550234]
+position = Vector2(117, 481)
+scale = Vector2(0.41374996, 0.4275002)
+texture = ExtResource("8_rwgvx")
 
 [connection signal="focus_entered" from="WHITE/0" to="." method="_on_color_rect_2_focus_entered"]
 [connection signal="focus_entered" from="WHITE/1" to="." method="_on_color_rect_3_focus_entered"]

@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://ctyd6nl67euuc"]
 
+[ext_resource type="PackedScene" uid="uid://ctfe201t0ew0q" path="res://captcha.tscn" id="1_wy7nf"]
+[ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="2_khgto"]
+[ext_resource type="Texture2D" uid="uid://d8efsq6i0xim" path="res://assets/fonts/Illustration56.png" id="3_mgi2q"]
+[ext_resource type="Texture2D" uid="uid://ctfnukg18cphu" path="res://assets/fonts/Illustration56 (1).png" id="4_wluak"]
+
 [node name="JobPt2" type="Node2D" unique_id=776986175]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1727558661]
@@ -8,3 +13,47 @@ offset_top = -910.0
 offset_right = 1977.0
 offset_bottom = 1275.0
 color = Color(0.72156864, 0.9254902, 0.92156863, 0.91764706)
+
+[node name="Node2D" parent="." unique_id=613588505 instance=ExtResource("1_wy7nf")]
+offset_left = 41.0
+offset_top = 16.0
+offset_right = 41.0
+offset_bottom = 16.0
+
+[node name="Label" type="Label" parent="." unique_id=1939910278]
+offset_left = 742.0
+offset_top = 210.0
+offset_right = 1108.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("2_khgto")
+theme_override_font_sizes/font_size = 50
+text = "Which of these
+people do not
+like you?"
+
+[node name="try_again" type="Node2D" parent="." unique_id=99609939]
+visible = false
+
+[node name="Illustration55(7)" type="Sprite2D" parent="try_again" unique_id=1591710821]
+position = Vector2(582.34, 327.5)
+scale = Vector2(1.0080903, 1.029321)
+texture = ExtResource("3_mgi2q")
+
+[node name="win" type="Node2D" parent="." unique_id=1489916679]
+visible = false
+
+[node name="Illustration55(8)" type="Sprite2D" parent="win" unique_id=542490084]
+position = Vector2(574, 323.5)
+scale = Vector2(1.0208333, 1.029321)
+texture = ExtResource("4_wluak")
+
+[node name="Timer" type="Timer" parent="." unique_id=1115804626]
+wait_time = 30.0
+
+[node name="timer_label" type="Label" parent="." unique_id=105239368]
+offset_left = 744.0
+offset_top = 411.0
+offset_right = 858.0
+offset_bottom = 449.0
+theme_override_font_sizes/font_size = 26
+text = "Time: 30"
