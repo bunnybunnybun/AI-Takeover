@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4t8lkx0h57yd" path="res://scenes/word_push.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://omny4bnx80le" path="res://scenes/river.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bb4mytwoapkj2" path="res://background_elections.tscn" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://r3jkt1opr5nm" path="res://assets/images/speech_bubble.png" id="6_85g3d"]
 [ext_resource type="PackedScene" uid="uid://x4b5geqgt1ku" path="res://scenes/pause_menu.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://b85b6ey3oc1c8" path="res://scripts/color_changer.gd" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://r32ssmhuvrl8" path="res://scripts/opponent_score.gd" id="8_tipki"]
@@ -36,7 +37,38 @@ z_index = 150
 position = Vector2(490, 162)
 scale = Vector2(0.5, 0.5)
 
+[node name="speech_bubble" type="TextureRect" parent="." unique_id=1320521044]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 325.0
+offset_top = -50.0
+offset_right = 874.0
+offset_bottom = 300.0
+grow_horizontal = 2
+texture = ExtResource("6_85g3d")
+expand_mode = 1
+
+[node name="speech" type="Label" parent="speech_bubble" unique_id=771463232]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.5
+offset_top = -89.0
+offset_right = 209.5
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
 [node name="pause_menu" parent="." unique_id=1764987467 instance=ExtResource("6_tefeu")]
+visible = false
 z_index = 600
 layout_mode = 1
 offset_left = 581.0
