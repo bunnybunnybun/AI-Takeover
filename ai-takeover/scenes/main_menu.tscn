@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://iu1fvdwuhyso" path="res://assets/images/button/Illustration.png" id="4_tbmy8"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="5_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://assets/images/button/Illustration50 (2).png" id="5_rtw2f"]
-[ext_resource type="Script" uid="uid://bjmpns6esobh3" path="res://scripts/settings.gd" id="7_1ajci"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="7_1ajci"]
 [ext_resource type="Texture2D" uid="uid://byfw4jg3mtyib" path="res://assets/images/button/Illustration50 (3) (smaller).png" id="10_j7ex8"]
 [ext_resource type="Texture2D" uid="uid://ca81mlb7813so" path="res://assets/images/button/Illustration50 (1) (smaller).png" id="11_a8gd2"]
 [ext_resource type="Script" uid="uid://buifcnle1nv57" path="res://scripts/easy.gd" id="12_hstxw"]
