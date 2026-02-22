@@ -4,21 +4,23 @@ const MEDIUM = 20
 const FAST = 30 
 var word_array_1: Array = ["Currently","In the past", "In the future","Furthermore", "As you can see" ]
 var word_array_2: Array = ["the opposition", "our friends", "Bob", "You and I","Enchiladas"]
-var word_array_3: Array = []
+var word_array_3: Array = ["sees", "hates", "wants", "destroys", "becomes"]
 var bad_words: Array = [
+"the opposition",
+"Bob",
+"In the past",
+"hates",
+
 	
 ]
-var neutral_words:Array = [
+var good_words: Array = [
 "Currently",
-"In the past",
 "In the future",
 "Furthermore", 
 "As you can see",
-"Enchiladas"
-]
-var good_words: Array = [
+"Enchiladas",
 "our friends",
-"You and I",
+"You and I"
 ]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
