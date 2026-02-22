@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cnuw1e3cgo8as"]
+[gd_scene format=3 uid="uid://c4v11r3b5j70v"]
 
 [ext_resource type="Script" uid="uid://e038kqrhmd3p" path="res://scripts/intro.gd" id="1_45dpb"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="2_hc7eg"]
@@ -121,3 +121,5 @@ color = Color(0.17642921, 0.3601551, 0.28155243, 1)
 [node name="Timer" type="Timer" parent="." unique_id=1642054817]
 wait_time = 0.3
 autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

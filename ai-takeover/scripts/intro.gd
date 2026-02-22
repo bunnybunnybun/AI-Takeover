@@ -18,7 +18,7 @@ func _ready() -> void:
 	faded = true
 	_load_text(label)
 func _next_button() -> void: 
-	if index <= text_array.size():
+	if index <= 3:
 		label.text = text_array[index]
 		_load_text(label)
 		index += 1
@@ -36,21 +36,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		#_next_button()
 	if event.is_action_pressed("ui_focus_next") and faded == true:
 		if not just_pressed:
+			just_pressed = true
+			timer.start()
 			if count == 0:
 				tween.kill()
 				label.visible_ratio = 1.0
 				count += 1
-				just_pressed = true
 				print("count 0 ")
 				return
 			elif count == 1:
 				label.visible_ratio = 0.0
 				_next_button()
-				count = 0 
-				just_pressed = true
+				count -= 1 
 				print("count 1")
 				return
-			timer.start()
 		print(count)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
