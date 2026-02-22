@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://iu1fvdwuhyso" path="res://assets/images/button/Illustration.png" id="6_3o3g3"]
 [ext_resource type="Script" uid="uid://c4vb2assg1dhg" path="res://scripts/pause_menu_quit.gd" id="6_v4r4p"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="8_h5b1d"]
-[ext_resource type="Script" uid="uid://bjmpns6esobh3" path="res://scripts/settings.gd" id="9_h5b1d"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="9_h5b1d"]
 [ext_resource type="Texture2D" uid="uid://byfw4jg3mtyib" path="res://assets/images/button/Illustration50 (3) (smaller).png" id="11_3o3g3"]
 [ext_resource type="Script" uid="uid://clfq2imniyaqq" path="res://scripts/settings_container.gd" id="11_h5b1d"]
 [ext_resource type="Script" uid="uid://c0foovb8wd6o0" path="res://scripts/medium.gd" id="13_1rgno"]
@@ -86,7 +86,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.25882354)
+color = Color(0, 0, 0, 0.25490198)
 
 [node name="main_container" type="VBoxContainer" parent="." unique_id=522559068]
 layout_mode = 1
@@ -175,7 +175,7 @@ text = "Quit :("
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="settings_container" type="VBoxContainer" parent="." unique_id=763832482]
+[node name="settings_container" type="Control" parent="." unique_id=658848847]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -185,11 +185,15 @@ grow_vertical = 2
 script = ExtResource("11_h5b1d")
 
 [node name="ColorRect" type="ColorRect" parent="settings_container" unique_id=1294711647]
-layout_mode = 2
+layout_mode = 0
+offset_right = 1152.0
 color = Color(0.18817544, 1.4740043e-07, 0.102623664, 0.6627451)
 
 [node name="settings_container" type="VBoxContainer" parent="settings_container" unique_id=1457625947]
-layout_mode = 2
+layout_mode = 0
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 217.0
 
 [node name="Label" type="Label" parent="settings_container/settings_container" unique_id=873135264]
 layout_mode = 2
@@ -276,12 +280,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="resume_button" type="TextureButton" parent="settings_container" unique_id=1068030530]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.5
+offset_top = -100.0
+offset_right = 317.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("3_ofnjo")
 texture_pressed = ExtResource("4_1rgno")
 texture_hover = ExtResource("5_4hnlu")
-texture_focused = ExtResource("6_3o3g3")
-stretch_mode = 6
+texture_focused = ExtResource("5_4hnlu")
+stretch_mode = 0
 script = ExtResource("16_h5b1d")
 
 [node name="Label" type="Label" parent="settings_container/resume_button" unique_id=1251062773]
@@ -295,7 +311,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("8_h5b1d")
 theme_override_font_sizes/font_size = 60
-text = "Back"
+text = "Resume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
