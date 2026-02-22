@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AI-takover"
-run/main_scene="uid://cnuw1e3cgo8as"
+run/main_scene="uid://c4v11r3b5j70v"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
