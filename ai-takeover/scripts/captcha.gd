@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	var secs = 50 - int(time_elapsed) % 60
 	timer_label.text = "Time:%s"%secs
 	if secs == 0:
-		timer_label.visible = false
+		timer_label.queue_free()
 		win.visible = false
 		try_again.visible = true
 		
