@@ -126,8 +126,3 @@ func _process(_delta: float) -> void:
 		node.position.x += GlobalVariables.word_speed
 		if node.position.x > max_distance + get_viewport_rect().position.x:
 			node.position.x = get_viewport_rect().position.x - 200
-		#
-		#for part in node.get_children():
-		#	part.position.x += GlobalVariables.word_speed
-		#	if part.position.x > max_distance + get_viewport_rect().position.x:
-		#		part.position.x = get_viewport_rect().position.x - 200
