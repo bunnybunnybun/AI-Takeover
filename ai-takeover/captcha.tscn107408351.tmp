@@ -1,15 +1,6 @@
 [gd_scene format=3 uid="uid://ctfe201t0ew0q"]
 
 [ext_resource type="Script" uid="uid://bbt75ejiwkwdn" path="res://scripts/captcha.gd" id="1_5qoyj"]
-[ext_resource type="Texture2D" uid="uid://61cxvk3ptdxe" path="res://assets/images/captcha/Illustration55 (1).png" id="2_wdqf6"]
-[ext_resource type="Texture2D" uid="uid://biid6o27l5ny4" path="res://assets/images/captcha/Illustration55 (2).png" id="3_tdyir"]
-[ext_resource type="Texture2D" uid="uid://o546eltkjhip" path="res://assets/images/captcha/Illustration55 (3).png" id="4_m7515"]
-[ext_resource type="Texture2D" uid="uid://blrxslyofjvk0" path="res://assets/images/captcha/Illustration55 (4).png" id="5_dx4jb"]
-[ext_resource type="Texture2D" uid="uid://dfxrhavkvel4t" path="res://assets/images/captcha/Illustration55 (5).png" id="6_bamo6"]
-[ext_resource type="Texture2D" uid="uid://cbg6flmvs4bsk" path="res://assets/images/captcha/Illustration55 (6).png" id="7_lwi4r"]
-[ext_resource type="Texture2D" uid="uid://clvb6uy6gtrwq" path="res://assets/images/captcha/Illustration55 (7).png" id="8_rwgvx"]
-[ext_resource type="Texture2D" uid="uid://be3bn2jd551pc" path="res://assets/images/captcha/Illustration55.png" id="9_2i1h1"]
-[ext_resource type="Texture2D" uid="uid://tiailbhnm8u8" path="res://assets/images/captcha/Illustration55 (8).png" id="10_0ik70"]
 
 [node name="Node2D" type="Control" unique_id=613588505]
 layout_mode = 3
@@ -124,56 +115,6 @@ offset_right = 267.5
 offset_bottom = 537.0
 grow_horizontal = 2
 color = Color(0.73467994, 0.73467994, 0.7346799, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=8056400]
-position = Vector2(107, 114)
-scale = Vector2(0.38375, 0.38875002)
-texture = ExtResource("2_wdqf6")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=762861505]
-position = Vector2(303, 119.00001)
-scale = Vector2(0.38375, 0.38875002)
-texture = ExtResource("3_tdyir")
-
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1002896476]
-position = Vector2(477.6521, 112.02305)
-scale = Vector2(0.4467396, 0.41988477)
-texture = ExtResource("4_m7515")
-
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1995621889]
-position = Vector2(116.99998, 288)
-scale = Vector2(0.41847894, 0.39976954)
-texture = ExtResource("5_dx4jb")
-
-[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1608568948]
-position = Vector2(302, 309)
-scale = Vector2(0.43298942, 0.42988476)
-texture = ExtResource("6_bamo6")
-
-[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=631835824]
-position = Vector2(488, 291)
-scale = Vector2(0.36923936, 0.3598848)
-texture = ExtResource("7_lwi4r")
-
-[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=720409053]
-position = Vector2(148.06125, 158.3175)
-scale = Vector2(0.14726406, 0.15112658)
-texture = ExtResource("2_wdqf6")
-
-[node name="Illustration55(7)" type="Sprite2D" parent="." unique_id=869550234]
-position = Vector2(117, 481)
-scale = Vector2(0.41374996, 0.4275002)
-texture = ExtResource("8_rwgvx")
-
-[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=688960297]
-position = Vector2(477.95108, 482.48846)
-scale = Vector2(0.43524447, 0.41244236)
-texture = ExtResource("9_2i1h1")
-
-[node name="Illustration55(8)" type="Sprite2D" parent="." unique_id=266671699]
-position = Vector2(300.00003, 476.99997)
-scale = Vector2(0.41875, 0.4300001)
-texture = ExtResource("10_0ik70")
 
 [connection signal="focus_entered" from="WHITE/0" to="." method="_on_color_rect_2_focus_entered"]
 [connection signal="focus_entered" from="WHITE/1" to="." method="_on_color_rect_3_focus_entered"]

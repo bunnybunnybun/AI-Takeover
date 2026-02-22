@@ -43,15 +43,16 @@ func update_button_focus() -> void:
 		var animation_sprite_2d = button_index.get_node_or_null("button2")
 		if animation_sprite_2d:
 			if r == cur_button:
+				button_index.on = true
 				animation_sprite_2d.modulate = Color(2, 2, 2) 
 				animation_sprite_2d.scale = Vector2(0.35,0.35)
 				i_am_current.emit(button_index.global_position)
 			else:
+				button_index.on = false
 				animation_sprite_2d.modulate = Color(0.2, 0.2, 0.2) 
 				animation_sprite_2d.scale = Vector2(0.3,0.3)
 
 				
-	
-	
-	
-	
+
+func _on_button_button_down() -> void:
+	get_tree().reload_current_scene()

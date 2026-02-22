@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cjvon3oo7kncx" path="res://scenes/buttons.tscn" id="2_gfah6"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="3_b8wht"]
 [ext_resource type="Script" uid="uid://ce2cf25p5se7a" path="res://scripts/camera.gd" id="4_0flep"]
+[ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://assets/images/button/Illustration50 (2).png" id="5_bgl4v"]
 
 [node name="JobApplication" type="Node2D" unique_id=469835976]
 script = ExtResource("1_bgl4v")
@@ -12,7 +13,7 @@ script = ExtResource("1_bgl4v")
 offset_left = -1125.0
 offset_top = -910.0
 offset_right = 1977.0
-offset_bottom = 1275.0
+offset_bottom = 2511.0
 color = Color(0.72156864, 0.9254902, 0.92156863, 0.91764706)
 
 [node name="Title" type="Label" parent="." unique_id=557952720]
@@ -42,58 +43,109 @@ position = Vector2(420, 467)
 [node name="button4" parent="buttons" unique_id=273913058 instance=ExtResource("2_gfah6")]
 position = Vector2(424, 734)
 
+[node name="button5" parent="buttons" unique_id=1905754883 instance=ExtResource("2_gfah6")]
+position = Vector2(425, 995)
+
 [node name="labels" type="Node2D" parent="." unique_id=184894163]
 position = Vector2(-426, 184)
 
 [node name="Label4" type="Label" parent="labels" unique_id=1481260833]
-offset_left = 804.0
-offset_top = 35.0
-offset_right = 1006.0
-offset_bottom = 110.0
+offset_left = 387.0
+offset_top = -178.0
+offset_right = 693.0
+offset_bottom = -65.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 35
 text = "Do olives taste
 Good?"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label5" type="Label" parent="labels" unique_id=529199567]
-offset_left = 844.0
-offset_top = 346.0
-offset_right = 1046.0
-offset_bottom = 421.0
+offset_left = 383.0
+offset_top = 691.0
+offset_right = 585.0
+offset_bottom = 772.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 35
 text = "Are you 
 a robot?"
 
 [node name="Label6" type="Label" parent="labels" unique_id=270969363]
-offset_left = 846.0
-offset_top = 266.0
-offset_right = 1048.0
-offset_bottom = 341.0
+offset_left = 392.0
+offset_top = 434.0
+offset_right = 606.0
+offset_bottom = 515.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 35
 text = "Do olives taste
 Good?"
 
 [node name="Label7" type="Label" parent="labels" unique_id=1888097487]
-offset_left = 813.0
-offset_top = 149.0
-offset_right = 1015.0
-offset_bottom = 224.0
+offset_left = 393.0
+offset_top = 144.0
+offset_right = 595.0
+offset_bottom = 219.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_b8wht")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 35
 text = "Do olives taste
 Good?"
 
-[node name="Label" type="Label" parent="." unique_id=1657376624]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Label9" type="Label" parent="labels" unique_id=817682999]
+offset_left = 393.0
+offset_top = 955.0
+offset_right = 607.0
+offset_bottom = 1036.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b8wht")
+theme_override_font_sizes/font_size = 45
+text = "Submit?"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=165643810]
+unique_name_in_owner = true
 position_smoothing_enabled = true
 script = ExtResource("4_0flep")
+
+[node name="try_again" type="Node2D" parent="." unique_id=1047300194]
+visible = false
+
+[node name="bg" type="TextureRect" parent="try_again" unique_id=1867195342]
+texture_filter = 1
+offset_left = -1290.0
+offset_top = -786.0
+offset_right = 1176.0
+offset_bottom = 808.0
+texture = ExtResource("5_bgl4v")
+
+[node name="Button" type="Button" parent="try_again" unique_id=963409946]
+offset_left = -313.0
+offset_top = -159.0
+offset_right = 287.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 100
+text = "Try again!"
+
+[node name="win" type="Node2D" parent="." unique_id=1747261686]
+visible = false
+
+[node name="bg" type="TextureRect" parent="win" unique_id=822063117]
+texture_filter = 1
+offset_left = -1472.0
+offset_top = -1081.0
+offset_right = 1445.0
+offset_bottom = 1094.0
+texture = ExtResource("5_bgl4v")
+
+[node name="Button2" type="Button" parent="win" unique_id=1545525672]
+offset_left = -247.0
+offset_top = -124.0
+offset_right = 379.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 100
+text = "Move on:"
+
+[connection signal="button_down" from="try_again/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="win/Button2" to="." method="_on_button_2_button_down"]

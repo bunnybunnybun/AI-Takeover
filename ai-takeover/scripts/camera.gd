@@ -13,3 +13,9 @@ func _process(delta: float) -> void:
 	pass
 func _on_current_found(body) -> void: 
 	global_position = body
+func reset_and_disable_camera():
+	global_position = Vector2.ZERO 
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", Vector2.ZERO, 0.5)
+	set_process(false)
+	enabled = false

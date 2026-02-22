@@ -23,18 +23,18 @@ func _input(event: InputEvent) -> void:
 		on_hoover.emit()
 
 	if event.is_action_pressed("ui_accept"): 
-		selected_block.contains(cur_block)
+		if selected_block.has(cur_block):
+			selected_block.erase(cur_block)
+		else:
+			selected_block.append(cur_block)
 		update_block_focus()
 
 func update_block_focus() -> void: 
 	for r in range(block_array.size()):
 		var block_node = block_array[r]
-		if block_node:
-			if selected_block.constains(r)
-				block_node.self_modulate = Color(0.51, 0.502, 0.502, 1.0) # Bright White
-			else:
-				selected_block
-			elif r == cur_block :
-				block_node.self_modulate = Color(0.835, 0.208, 0.581, 1.0) # Pink
-			else:
-				block_node.self_modulate = Color(0.238, 0.238, 0.238, 1.0) # Pink
+		if r == cur_block :
+			block_node.self_modulate = Color(0.329, 0.329, 0.329, 1.0) # Pink
+		elif selected_block.has(r):
+			block_node.self_modulate = Color(0.832, 0.212, 0.585, 1.0) # Bright White
+		else:
+			block_node.self_modulate = Color(0.711, 0.711, 0.711, 1.0) # Pink
