@@ -15,7 +15,10 @@ var good_words = [
 	"Hackclub",
 	"Bueno",
 	"Amigos",
-	"Ice Cream"
+	"Ice Cream",
+	"Sleep",
+	"Peace",
+	"Excitement"
 ]
 
 var bad_words = [
@@ -29,6 +32,9 @@ var bad_words = [
 	"Feo",
 	"YMCA",
 	"Pollution",
-	"Carbon"
+	"Carbon",
+	"Exhaustion",
+	"Indifference"
 ]
+
 var hand_speed = 1
