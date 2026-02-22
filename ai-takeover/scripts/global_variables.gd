@@ -1,7 +1,7 @@
 extends Node
 
 var difficulty = "easy"
-var word_speed = 5
+var word_speed = 8
 
 var good_words = [
 	"Money",
@@ -15,6 +15,10 @@ var good_words = [
 	"Hackclub",
 	"Bueno",
 	"Amigos",
+	"Ice Cream",
+	"Sleep",
+	"Peace",
+	"Excitement"
 ]
 
 var bad_words = [
@@ -23,10 +27,14 @@ var bad_words = [
 	"Hate",
 	"Dirt",
 	"Grime",
-	"Catacombs",
 	"Dictator",
 	"Mal",
 	"Feo",
 	"YMCA",
+	"Pollution",
+	"Carbon",
+	"Exhaustion",
+	"Indifference"
 ]
+
 var hand_speed = 1

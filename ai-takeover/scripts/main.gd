@@ -40,5 +40,5 @@ func _on_word_pushed(word) -> void:
 	can_pickup = false
 	word_array.append(word.name)
 	word.queue_free()
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.5).timeout
 	can_pickup = true
