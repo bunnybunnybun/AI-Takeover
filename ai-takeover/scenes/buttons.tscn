@@ -63,7 +63,7 @@ animations = [{
 script = ExtResource("1_ixhct")
 
 [node name="button2" type="AnimatedSprite2D" parent="." unique_id=2099862161]
-position = Vector2(12, 20)
+position = Vector2(-4, 99)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_smgxo")
 animation = &"off_to_on"

@@ -37,6 +37,10 @@ func _level_load ()-> void:
 func _on_word_pushed(word) -> void: 
 	if !can_pickup:
 		return
+	$speech_bubble/speech.text += str(word.name) + " "
+	if $speech_bubble/speech.get_total_character_count() > 100:
+		get_tree().change_scene_to_file("res://scenes/job_application.tscn")
+		return
 	can_pickup = false
 	word_array.append(word.name)
 	word.queue_free()

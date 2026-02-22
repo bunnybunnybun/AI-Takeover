@@ -21,13 +21,15 @@ offset_right = 41.0
 offset_bottom = 16.0
 
 [node name="Label" type="Label" parent="." unique_id=1939910278]
-offset_left = 742.0
-offset_top = 210.0
-offset_right = 1108.0
-offset_bottom = 423.0
+offset_left = 717.0
+offset_top = 66.0
+offset_right = 1083.0
+offset_bottom = 353.0
 theme_override_fonts/font = ExtResource("2_khgto")
 theme_override_font_sizes/font_size = 50
-text = "Which of these
+text = "CAPTCHA
+
+Which of these
 people do not
 like you?"
 
@@ -35,8 +37,8 @@ like you?"
 visible = false
 
 [node name="Illustration55(7)" type="Sprite2D" parent="try_again" unique_id=1591710821]
-position = Vector2(582.34, 327.5)
-scale = Vector2(1.0080903, 1.029321)
+position = Vector2(578.5, 327.5)
+scale = Vector2(1.014757, 1.029321)
 texture = ExtResource("3_mgi2q")
 
 [node name="win" type="Node2D" parent="." unique_id=1489916679]
@@ -51,9 +53,9 @@ texture = ExtResource("4_wluak")
 wait_time = 30.0
 
 [node name="timer_label" type="Label" parent="." unique_id=105239368]
-offset_left = 744.0
-offset_top = 411.0
-offset_right = 858.0
-offset_bottom = 449.0
+offset_left = 723.0
+offset_top = 420.0
+offset_right = 837.0
+offset_bottom = 458.0
 theme_override_font_sizes/font_size = 26
 text = "Time: 30"
