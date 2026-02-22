@@ -22,8 +22,9 @@ func _ready() -> void:
 	await get_tree().create_timer(0.7).timeout
 	faded = true
 	fade_into(1.0,next)
+	
 func _next_button() -> void: 
-	if index <= text_array.size()-1:
+	if index < text_array.size():
 		if index == 0:
 			fade_into(0.0,texture_rect)
 		label.text = text_array[index]
@@ -33,11 +34,13 @@ func _next_button() -> void:
 	else:
 		await fade_into(0.0,fade)
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		
 func _load_text(text) -> void:
 	tween = create_tween()
 	var duration = 0.5+(0.06* text.text.length())
 	tween.tween_property(text,"visible_ratio",1.0,duration)
 	await tween.finished
+	
 func _unhandled_input(event: InputEvent) -> void:
 	#if event.is_action_pressed("ui_accept"):
 		#label.visible_ratio = 0.0
@@ -63,12 +66,12 @@ func _process(delta: float) -> void:
 	if elapsed_time >= 0.6:
 		cursor.visible = !cursor.visible
 		elapsed_time = 0.0
-func fade_into (alpha:float,body) -> void:
-	print(body.name)
+
+func fade_into (alpha: float,body) -> void:
 	var tween_fade := create_tween()
 	var SPEED = 1.5
 	if body.name == "fade": 
-		SPEED = 3.0
+		SPEED = 0.25
 	tween_fade.tween_property(body, "modulate:a",alpha, SPEED)
 	await tween_fade.finished
 func _on_timer_timeout() -> void:
