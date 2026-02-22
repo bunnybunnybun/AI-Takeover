@@ -42,7 +42,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				tween.kill()
 				label.visible_ratio = 1.0
 				count += 1
-				print("count 0 ")
+				print("count 0")
 				return
 			elif count == 1:
 				label.visible_ratio = 0.0

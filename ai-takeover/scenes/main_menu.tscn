@@ -7,14 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://iu1fvdwuhyso" path="res://assets/images/button/Illustration.png" id="4_tbmy8"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="5_jk1qb"]
 [ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://assets/images/button/Illustration50 (2).png" id="5_rtw2f"]
-[ext_resource type="Script" uid="uid://dxokboj0lfws6" path="res://scripts/main_menu_settings.gd" id="7_7b55j"]
-[ext_resource type="Script" uid="uid://clfq2imniyaqq" path="res://scripts/settings_container.gd" id="9_5pajh"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="7_1ajci"]
 [ext_resource type="Texture2D" uid="uid://byfw4jg3mtyib" path="res://assets/images/button/Illustration50 (3) (smaller).png" id="10_j7ex8"]
 [ext_resource type="Texture2D" uid="uid://ca81mlb7813so" path="res://assets/images/button/Illustration50 (1) (smaller).png" id="11_a8gd2"]
 [ext_resource type="Script" uid="uid://buifcnle1nv57" path="res://scripts/easy.gd" id="12_hstxw"]
 [ext_resource type="Script" uid="uid://c0foovb8wd6o0" path="res://scripts/medium.gd" id="13_8egab"]
+[ext_resource type="Script" uid="uid://djcmwhm3gtapn" path="res://scripts/resume_button.gd" id="14_7b55j"]
 [ext_resource type="Script" uid="uid://cdbi75aqyrcbu" path="res://scripts/hard.gd" id="14_gw5y6"]
-[ext_resource type="Script" uid="uid://by3cobq4mg6dt" path="res://scripts/main_menu_resume_button.gd" id="15_7b55j"]
 
 [node name="main_menu" type="Control" unique_id=1618483000]
 layout_mode = 3
@@ -82,7 +81,7 @@ texture_pressed = ExtResource("5_rtw2f")
 texture_hover = ExtResource("3_tbmy8")
 texture_focused = ExtResource("4_tbmy8")
 stretch_mode = 5
-script = ExtResource("7_7b55j")
+script = ExtResource("7_1ajci")
 
 [node name="Label" type="Label" parent="VBoxContainer/settings" unique_id=690752774]
 layout_mode = 1
@@ -132,7 +131,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("9_5pajh")
 
 [node name="ColorRect" type="ColorRect" parent="settings_container" unique_id=1342234257]
 layout_mode = 1
@@ -265,7 +263,7 @@ texture_pressed = ExtResource("5_rtw2f")
 texture_hover = ExtResource("3_tbmy8")
 texture_focused = ExtResource("4_tbmy8")
 stretch_mode = 6
-script = ExtResource("15_7b55j")
+script = ExtResource("14_7b55j")
 
 [node name="Label" type="Label" parent="settings_container/resume_button" unique_id=1621715799]
 layout_mode = 1
