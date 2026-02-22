@@ -18,7 +18,7 @@ func _ready() -> void:
 	faded = true
 	_load_text(label)
 func _next_button() -> void: 
-	if index <= 3:
+	if index <= text_array.size():
 		label.text = text_array[index]
 		_load_text(label)
 		index += 1
@@ -41,11 +41,15 @@ func _unhandled_input(event: InputEvent) -> void:
 				label.visible_ratio = 1.0
 				count += 1
 				just_pressed = true
+				print("count 0 ")
+				return
 			elif count == 1:
 				label.visible_ratio = 0.0
 				_next_button()
 				count = 0 
 				just_pressed = true
+				print("count 1")
+				return
 			timer.start()
 		print(count)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,3 +65,4 @@ func fade_into (alpha:float) -> void:
 	await tween_fade.finished
 func _on_timer_timeout() -> void:
 	just_pressed = false
+	print("count reset")

@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://w7s4eeivyw7l" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://b4t8lkx0h57yd" path="res://scenes/word_push.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://difddham78e5g" path="res://scripts/flash.tscn" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://omny4bnx80le" path="res://scenes/river.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://brx3uxf64o48t" path="res://background_elections.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://brx3uxf64o48t" path="res://scenes/background_elections.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://x4b5geqgt1ku" path="res://scenes/pause_menu.tscn" id="6_tefeu"]
 
 [node name="main" type="Node2D" unique_id=1916585667]
@@ -13,6 +14,8 @@ script = ExtResource("1_o5qli")
 z_index = 150
 
 [node name="Node2D" parent="." unique_id=1823685871 instance=ExtResource("5_tbgi4")]
+
+[node name="flash" parent="." unique_id=1108422954 instance=ExtResource("3_tefeu")]
 
 [node name="WordPush" parent="." unique_id=379484559 instance=ExtResource("3_jyhfs")]
 position = Vector2(490, 162)

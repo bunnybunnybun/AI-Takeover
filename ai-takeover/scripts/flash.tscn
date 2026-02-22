@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://difddham78e5g"]
+
+[ext_resource type="Script" uid="uid://fpfuwkxihplt" path="res://scripts/flash.gd" id="1_gy1h1"]
+[ext_resource type="Texture2D" uid="uid://busktkrwcv8ks" path="res://assets/images/fades/Illustration54 (1).png" id="2_4wq26"]
+[ext_resource type="Texture2D" uid="uid://dnwbkr4iago18" path="res://assets/images/fades/Illustration54 (2).png" id="3_kgj6b"]
+[ext_resource type="Texture2D" uid="uid://cfrpx3hv1ergb" path="res://assets/images/fades/Illustration54 (3).png" id="4_28buf"]
+[ext_resource type="Texture2D" uid="uid://bj4cpaulnrj7s" path="res://assets/images/fades/Illustration54.png" id="5_2c1ng"]
+[ext_resource type="Texture2D" uid="uid://dxiwt0x48r803" path="res://assets/images/fades/Illustration54 (4).png" id="6_kk0yn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jf4fo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4wq26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kgj6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_28buf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2c1ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kk0yn")
+}],
+"loop": true,
+"name": &"four_fade",
+"speed": 5.0
+}]
+
+[node name="flash" type="Control" unique_id=1108422954]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gy1h1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=680681018]
+modulate = Color(1, 1, 1, 0.9843137)
+position = Vector2(572, 324)
+sprite_frames = SubResource("SpriteFrames_jf4fo")
+animation = &"four_fade"
+frame = 2
+frame_progress = 0.5038639
+
+[node name="Timer" type="Timer" parent="." unique_id=1703414658]
+autostart = true
+
+[node name="cooldown" type="Timer" parent="." unique_id=218708595]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]
