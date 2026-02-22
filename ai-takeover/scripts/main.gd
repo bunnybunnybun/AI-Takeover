@@ -39,7 +39,6 @@ func _on_word_pushed(word) -> void:
 		return
 	can_pickup = false
 	word_array.append(word.name)
-	get_node_or_null("River").shuffle_positions()
 	word.queue_free()
 	await get_tree().create_timer(0.2).timeout
 	can_pickup = true
