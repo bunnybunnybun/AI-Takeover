@@ -190,10 +190,14 @@ offset_right = 1152.0
 color = Color(0.18817544, 1.4740043e-07, 0.102623664, 0.6627451)
 
 [node name="settings_container" type="VBoxContainer" parent="settings_container" unique_id=1457625947]
-layout_mode = 0
-offset_top = 4.0
-offset_right = 1152.0
-offset_bottom = 217.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 213.0
+grow_horizontal = 2
 
 [node name="Label" type="Label" parent="settings_container/settings_container" unique_id=873135264]
 layout_mode = 2
@@ -206,7 +210,8 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="settings_container/settings_container" unique_id=1075993182]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 
 [node name="easy" type="TextureButton" parent="settings_container/settings_container/HBoxContainer" unique_id=1446999512]
 layout_mode = 2
@@ -311,7 +316,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("8_h5b1d")
 theme_override_font_sizes/font_size = 60
-text = "Resume"
+text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
