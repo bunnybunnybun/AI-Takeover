@@ -36,17 +36,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		#_next_button()
 	if event.is_action_pressed("ui_focus_next") and faded == true:
 		if not just_pressed:
+			just_pressed = true
+			timer.start()
 			if count == 0:
 				tween.kill()
 				label.visible_ratio = 1.0
 				count += 1
-				just_pressed = true
+				print("count 0 ")
+				return
 			elif count == 1:
 				label.visible_ratio = 0.0
 				_next_button()
-				count = 0 
-				just_pressed = true
-			timer.start()
+				count -= 1 
+				print("count 1")
+				return
 		print(count)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -61,3 +64,4 @@ func fade_into (alpha:float) -> void:
 	await tween_fade.finished
 func _on_timer_timeout() -> void:
 	just_pressed = false
+	print("count reset")

@@ -67,7 +67,7 @@ script = ExtResource("1_o6xqn")
 sprite_frames = SubResource("SpriteFrames_y0gf6")
 animation = &"hand_grab"
 frame = 11
-frame_progress = 0.88500684
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=387232538 groups=["word_pushed"]]
 

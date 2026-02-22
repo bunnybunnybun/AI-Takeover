@@ -12,6 +12,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_focus_next") and !visible:
 		visible = true
 		print("button pressed")
+		animated_sprite_2d.speed_scale = GlobalVariables.hand_speed
 		animated_sprite_2d.frame = 0 
 		animated_sprite_2d.play("hand_grab")
 		var tween = get_tree().create_tween()

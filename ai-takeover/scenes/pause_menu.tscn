@@ -2,19 +2,21 @@
 
 [ext_resource type="Script" uid="uid://c02ieew0nt52q" path="res://scripts/pause_menu.gd" id="1_n87rw"]
 [ext_resource type="Shader" uid="uid://7rkd4deky1in" path="res://shaders/pause_menu_blur.gdshader" id="2_1s2dm"]
-[ext_resource type="Texture2D" uid="uid://cawyt4qo1bc5d" path="res://icon.svg" id="2_88e76"]
-[ext_resource type="Texture2D" uid="uid://c04k1xc47kejl" path="res://assets/images/button/Illustration50 (3).png" id="3_ofnjo"]
+[ext_resource type="Texture2D" uid="uid://bmby3gwumburq" path="res://assets/images/button/Illustration50 (3).png" id="3_ofnjo"]
 [ext_resource type="Texture2D" uid="uid://dho0m6j3sic33" path="res://assets/images/button/Illustration50 (2).png" id="4_1rgno"]
 [ext_resource type="Script" uid="uid://d18ynwr7x5br2" path="res://scripts/pause_menu_resume.gd" id="4_5d2l8"]
 [ext_resource type="Texture2D" uid="uid://b5sb4w1ibapc4" path="res://assets/images/button/Illustration50 (1).png" id="5_4hnlu"]
 [ext_resource type="Texture2D" uid="uid://iu1fvdwuhyso" path="res://assets/images/button/Illustration.png" id="6_3o3g3"]
-[ext_resource type="Script" path="res://scripts/pause_menu_quit.gd" id="6_v4r4p"]
+[ext_resource type="Script" uid="uid://c4vb2assg1dhg" path="res://scripts/pause_menu_quit.gd" id="6_v4r4p"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="8_h5b1d"]
-[ext_resource type="Script" path="res://scripts/settings_container.gd" id="11_h5b1d"]
-[ext_resource type="Script" path="res://scripts/medium.gd" id="13_1rgno"]
-[ext_resource type="Script" path="res://scripts/easy.gd" id="13_4hnlu"]
-[ext_resource type="Script" path="res://scripts/hard.gd" id="15_3o3g3"]
-[ext_resource type="Script" path="res://scripts/resume_button.gd" id="16_h5b1d"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="9_h5b1d"]
+[ext_resource type="Texture2D" uid="uid://byfw4jg3mtyib" path="res://assets/images/button/Illustration50 (3) (smaller).png" id="11_3o3g3"]
+[ext_resource type="Script" uid="uid://clfq2imniyaqq" path="res://scripts/settings_container.gd" id="11_h5b1d"]
+[ext_resource type="Script" uid="uid://c0foovb8wd6o0" path="res://scripts/medium.gd" id="13_1rgno"]
+[ext_resource type="Script" uid="uid://buifcnle1nv57" path="res://scripts/easy.gd" id="13_4hnlu"]
+[ext_resource type="Texture2D" uid="uid://ca81mlb7813so" path="res://assets/images/button/Illustration50 (1) (smaller).png" id="13_avs0h"]
+[ext_resource type="Script" uid="uid://cdbi75aqyrcbu" path="res://scripts/hard.gd" id="15_3o3g3"]
+[ext_resource type="Script" uid="uid://djcmwhm3gtapn" path="res://scripts/resume_button.gd" id="16_h5b1d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_88e76"]
 shader = ExtResource("2_1s2dm")
@@ -131,6 +133,7 @@ texture_pressed = ExtResource("4_1rgno")
 texture_hover = ExtResource("5_4hnlu")
 texture_focused = ExtResource("6_3o3g3")
 stretch_mode = 5
+script = ExtResource("9_h5b1d")
 
 [node name="Label" type="Label" parent="main_container/settings" unique_id=225976893]
 layout_mode = 1
@@ -173,7 +176,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="settings_container" type="Control" parent="." unique_id=98382669]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -182,6 +184,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("11_h5b1d")
 
+[node name="ColorRect" type="ColorRect" parent="settings_container" unique_id=1294711647]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -444.0
+offset_top = -258.0
+offset_right = 445.0
+offset_bottom = 218.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18817544, 1.4740043e-07, 0.102623664, 0.6627451)
+
 [node name="settings_container" type="VBoxContainer" parent="settings_container" unique_id=1457625947]
 layout_mode = 1
 anchors_preset = 8
@@ -189,10 +206,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -266.5
-offset_top = -260.75
-offset_right = 266.5
-offset_bottom = 260.75
+offset_left = -448.0
+offset_top = -53.0
+offset_right = 448.0
+offset_bottom = 182.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -200,8 +217,10 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_h5b1d")
 theme_override_font_sizes/font_size = 32
 text = "Difficulty (speed of words moving) "
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="settings_container/settings_container" unique_id=1075993182]
 layout_mode = 2
@@ -210,7 +229,9 @@ size_flags_vertical = 3
 [node name="easy" type="TextureButton" parent="settings_container/settings_container/HBoxContainer" unique_id=1446999512]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_88e76")
+texture_normal = ExtResource("11_3o3g3")
+texture_hover = ExtResource("13_avs0h")
+texture_focused = ExtResource("13_avs0h")
 stretch_mode = 5
 script = ExtResource("13_4hnlu")
 
@@ -231,7 +252,9 @@ vertical_alignment = 1
 [node name="medium" type="TextureButton" parent="settings_container/settings_container/HBoxContainer" unique_id=792982597]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_88e76")
+texture_normal = ExtResource("11_3o3g3")
+texture_hover = ExtResource("13_avs0h")
+texture_focused = ExtResource("13_avs0h")
 stretch_mode = 5
 script = ExtResource("13_1rgno")
 
@@ -252,7 +275,9 @@ vertical_alignment = 1
 [node name="hard" type="TextureButton" parent="settings_container/settings_container/HBoxContainer" unique_id=797016665]
 layout_mode = 2
 size_flags_horizontal = 3
-texture_normal = ExtResource("2_88e76")
+texture_normal = ExtResource("11_3o3g3")
+texture_hover = ExtResource("13_avs0h")
+texture_focused = ExtResource("13_avs0h")
 stretch_mode = 5
 script = ExtResource("15_3o3g3")
 
@@ -263,23 +288,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.9764706, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.9764706, 0, 0, 1)
-theme_override_constants/outline_size = 2
+theme_override_colors/font_color = Color(0.9224709, 0.014387918, 5.7756904e-07, 1)
+theme_override_colors/font_outline_color = Color(0.9710968, 0, 0.005598569, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("8_h5b1d")
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 55
 text = "Hard"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="resume_button" type="TextureButton" parent="settings_container" unique_id=1068030530]
-layout_mode = 0
-offset_left = 300.0
-offset_top = 67.0
-offset_right = 481.0
-offset_bottom = 157.0
-texture_normal = ExtResource("2_88e76")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -247.0
+offset_right = 221.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ofnjo")
+texture_pressed = ExtResource("4_1rgno")
+texture_hover = ExtResource("5_4hnlu")
+texture_focused = ExtResource("6_3o3g3")
+stretch_mode = 6
 script = ExtResource("16_h5b1d")
+
+[node name="Label" type="Label" parent="settings_container/resume_button" unique_id=1251062773]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 41.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_h5b1d")
+theme_override_font_sizes/font_size = 60
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=137200537]
 libraries/ = SubResource("AnimationLibrary_71k7c")

@@ -24,3 +24,4 @@ var bad_words = [
 	"Catacombs",
 	"Dictator"
 ]
+var hand_speed = 1
