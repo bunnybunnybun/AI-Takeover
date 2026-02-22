@@ -2,19 +2,84 @@
 
 [ext_resource type="Script" uid="uid://e038kqrhmd3p" path="res://scripts/intro.gd" id="1_45dpb"]
 [ext_resource type="FontFile" uid="uid://buydc1jct145k" path="res://assets/fonts/ClearGulchOblique-R9xvW.otf" id="2_hc7eg"]
+[ext_resource type="Texture2D" uid="uid://cxp551ln2axpf" path="res://assets/images/chatbot/Illustration54 (18).png" id="2_xwriy"]
+[ext_resource type="Texture2D" uid="uid://8xqlihbnqdvt" path="res://assets/images/chatbot/Illustration54 (8).png" id="3_u5myo"]
+[ext_resource type="Texture2D" uid="uid://da77y7s0rt3pa" path="res://assets/images/chatbot/Illustration54 (13).png" id="4_u05oh"]
+[ext_resource type="Texture2D" uid="uid://dd47aev5qdj45" path="res://assets/images/chatbot/Illustration54 (9).png" id="5_epycs"]
+[ext_resource type="Texture2D" uid="uid://x516n1cgrhpi" path="res://assets/images/chatbot/Illustration54 (10).png" id="6_ge50m"]
+[ext_resource type="Texture2D" uid="uid://fftpy2jihhco" path="res://assets/images/chatbot/Illustration54 (7).png" id="7_17bgi"]
+[ext_resource type="Texture2D" uid="uid://dh8m7dhh7nkkw" path="res://assets/images/chatbot/Illustration54 (11).png" id="8_dryi7"]
+[ext_resource type="Texture2D" uid="uid://d3st2fmilcxgq" path="res://assets/images/chatbot/Illustration54 (15).png" id="9_5pmge"]
+[ext_resource type="Texture2D" uid="uid://bs0yw2egl5mk2" path="res://assets/images/chatbot/Illustration54 (12).png" id="10_hai50"]
+[ext_resource type="Texture2D" uid="uid://cdut0pgf1h5ch" path="res://assets/images/chatbot/Illustration54 (17).png" id="11_kh17o"]
+[ext_resource type="Texture2D" uid="uid://kdwio5s25h35" path="res://assets/images/chatbot/Illustration54 (16).png" id="12_urird"]
+[ext_resource type="Texture2D" uid="uid://dqp5kdsf2tagf" path="res://assets/images/chatbot/Illustration54 (14).png" id="13_t5vr6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vp3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xwriy")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_u5myo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u05oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_epycs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ge50m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_17bgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dryi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5pmge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hai50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kh17o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_urird")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t5vr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xwriy")
+}],
+"loop": false,
+"name": &"sent",
+"speed": 17.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_45dpb"]
 interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.012019231)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_hc7eg"]
 gradient = SubResource("Gradient_45dpb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqbct"]
-bg_color = Color(0.41960785, 0.6666667, 0.81960785, 0.26666668)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.5019608, 0.627451, 0.9098039, 0.5803922)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Intro" type="Control" unique_id=1800601347]
 layout_mode = 3
@@ -35,12 +100,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=1494847352]
+position = Vector2(571, 319)
+sprite_frames = SubResource("SpriteFrames_4vp3x")
+autoplay = "default"
+
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=335954599]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 49.0
+offset_left = -37.0
+offset_right = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_hc7eg")
@@ -53,26 +124,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -576.0
+offset_left = -527.0
 offset_top = -325.0
-offset_right = 576.0
+offset_right = 625.0
 offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_hc7eg")
 theme_override_font_sizes/normal_font_size = 100
 text = "AI Takeover"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="next" type="Panel" parent="Control" unique_id=1130867345]
+z_index = 100
 layout_mode = 0
-offset_left = 764.0
-offset_top = 541.0
-offset_right = 1127.0
-offset_bottom = 617.0
+offset_left = 780.0
+offset_top = 490.0
+offset_right = 1105.0
+offset_bottom = 566.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_aqbct")
 
@@ -81,13 +152,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 27.0
+offset_left = 9.0
 offset_top = 8.0
-offset_right = -28.0
+offset_right = -26.0
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hc7eg")
 theme_override_font_sizes/font_size = 50
 text = "Press to Skip"
@@ -97,12 +169,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 314.0
-offset_right = 241.0
+offset_left = 288.0
+offset_right = 215.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 46
 text = "|"
 
@@ -113,7 +186,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 54.0
+offset_left = -3.0
+offset_right = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1

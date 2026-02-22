@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 var word_array: Array = []
 
 var bad_phrases: Array = [

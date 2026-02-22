@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if int(text) > 0:
 		add_theme_color_override("font_color", Color.GREEN)
 	if int(text) < 0:
@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	score_change -= 1
 	if score_change == 0:
 		score_change = 60
-		var player_score = int($"..".text)
+		var _player_score = int($"..".text)
 		var diff_score = RandomNumberGenerator.new().randi_range(-1, 1)
 		text = str(int(text) + diff_score)
 		

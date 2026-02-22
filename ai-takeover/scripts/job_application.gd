@@ -2,6 +2,8 @@ extends Node2D
 var cur_button = 0
 var button_array = []
 var loading = false
+signal i_am_current
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var buttons = get_node_or_null("buttons")
@@ -37,11 +39,13 @@ func _on_short_click (_button_number) -> void:
 	update_button_focus()
 func update_button_focus() -> void: 
 	for r in range(button_array.size()):
-		var animation_sprite_2d = button_array[r].get_node_or_null("button2")
+		var button_index = button_array[r]
+		var animation_sprite_2d = button_index.get_node_or_null("button2")
 		if animation_sprite_2d:
 			if r == cur_button:
 				animation_sprite_2d.modulate = Color(2, 2, 2) 
 				animation_sprite_2d.scale = Vector2(0.35,0.35)
+				i_am_current.emit(button_index.global_position)
 			else:
 				animation_sprite_2d.modulate = Color(0.2, 0.2, 0.2) 
 				animation_sprite_2d.scale = Vector2(0.3,0.3)

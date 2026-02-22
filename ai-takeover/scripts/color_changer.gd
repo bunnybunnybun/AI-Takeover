@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if int(text) > 0:
 		add_theme_color_override("font_color", Color.GREEN)
 	if int(text) < 0:

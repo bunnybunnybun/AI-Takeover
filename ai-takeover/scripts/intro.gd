@@ -3,6 +3,8 @@ extends Control
 @onready var label: RichTextLabel = $Control/label
 @onready var timer: Timer = $Timer
 @onready var cursor: Label = $Control/next/cursor
+@onready var next: Panel = $Control/next
+@onready var texture_rect: TextureRect = $Control/TextureRect
 var faded = false
 var tween
 var count = 0
@@ -12,18 +14,24 @@ var elapsed_time = 0.0
 var index = 0 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	texture_rect.visible = true
 	label.visible_ratio = 0.0
 	fade.modulate.a = 1.0
-	await fade_into(0.0)
-	faded = true
+	await fade_into(0.0,fade)
 	_load_text(label)
+	await get_tree().create_timer(0.7).timeout
+	faded = true
+	fade_into(1.0,next)
 func _next_button() -> void: 
 	if index <= text_array.size()-1:
+		if index == 0:
+			fade_into(0.0,texture_rect)
 		label.text = text_array[index]
-		_load_text(label)
+		label.visible_ratio = 0.0
 		index += 1
+		_load_text(label)
 	else:
-		fade_into(0.0)
+		await fade_into(0.0,fade)
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 func _load_text(text) -> void:
 	tween = create_tween()
@@ -55,9 +63,13 @@ func _process(delta: float) -> void:
 	if elapsed_time >= 0.6:
 		cursor.visible = !cursor.visible
 		elapsed_time = 0.0
-func fade_into (alpha:float) -> void:
+func fade_into (alpha:float,body) -> void:
+	print(body.name)
 	var tween_fade := create_tween()
-	tween_fade.tween_property(fade, "modulate:a",alpha, 3.0)
+	var SPEED = 1.5
+	if body.name == "fade": 
+		SPEED = 3.0
+	tween_fade.tween_property(body, "modulate:a",alpha, SPEED)
 	await tween_fade.finished
 func _on_timer_timeout() -> void:
 	just_pressed = false
