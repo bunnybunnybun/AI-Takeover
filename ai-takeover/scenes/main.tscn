@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://omny4bnx80le" path="res://scenes/river.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bb4mytwoapkj2" path="res://background_elections.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://x4b5geqgt1ku" path="res://scenes/pause_menu.tscn" id="6_tefeu"]
-[ext_resource type="Script" uid="uid://b85b6ey3oc1c8" path="res://scenes/color_changer.gd" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://b85b6ey3oc1c8" path="res://scripts/color_changer.gd" id="7_o6xl0"]
 [ext_resource type="Script" uid="uid://r32ssmhuvrl8" path="res://scripts/opponent_score.gd" id="8_tipki"]
 
 [sub_resource type="Theme" id="Theme_tefeu"]
