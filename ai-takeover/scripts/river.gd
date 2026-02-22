@@ -2,81 +2,38 @@ extends Node2D
 
 signal word_pushed
 
-var words = [
-	"How",
-	"Is",
-	"Why",
-	"When",
-	"What",
-	"And",
-	"Will",
-	"I",
-	"Not",
-	"Catacombs",
-	"Nation",
-	"President",
-	"Eat",
-	"To",
-	"Or",
-	"I’m",
-	"Scared",
-	"Can",
-	"Not",
-	"The",
-	"Clean",
-	"Hackclub",
-	"Murder",
-	"Couch",
-	"Cool",
-	"Want",
-	"Touch",
-	"Money",
-	"Everyone",
-	"No one",
-	"TVs",
-	"Shower",
-	"Door",
-	"School",
-	"Logical",
-	"Emotional",
-	"Help",
-	"Bank",
-	"Free",
-	"Sure",
-	"Make",
-	"Has",
-	"Tablet",
-	"Street",
-	"Road",
-	"Restaurant",
-	"Food",
-	"Water",
-	"Pants",
-    "House"
-]
-
 var label_nodes = []
 
-var max_distance = 500 * len(words)
+var all
+
+var count = len(GlobalVariables.good_words) + len(GlobalVariables.bad_words)
+var max_distance = 500 * count
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range(len(words)):
-		var word = words[i]
+	all = GlobalVariables.good_words.duplicate()
+	all.append_array(GlobalVariables.bad_words)
+	all.shuffle()
+	for i in range(count):
+		var word = all[i]
 		
-		var n = Node.new()
+		var n = Node2D.new()
 		n.name = word
 		
 		var l = Label.new()
+		l.name = "Label"
 		l.text = word
 		l.add_theme_font_size_override("font_size", 60)
-		l.position.x = i * max_distance / len(words) + get_viewport_rect().position.x
-		l.position.y = get_viewport_rect().size.y * 0.1 + get_viewport_rect().position.y
+		
+		
+		n.position.x = i * max_distance / count + get_viewport_rect().position.x
+		n.position.y = get_viewport_rect().size.y * 0.1 + get_viewport_rect().position.y
 		
 		n.add_child(l)
 		l.add_to_group("labels")
 		
 		var r = Panel.new()
+		r.name = "Panel"
 		r.position.x = l.position.x - 18
 		r.position.y = l.position.y - 10
 				
@@ -98,6 +55,7 @@ func _ready() -> void:
 		n.add_child(r)
 		
 		var area_2d = Area2D.new()
+		area_2d.name = "Area2D"
 		area_2d.position = r.position + r.size / 2
 		var collision_rect = CollisionShape2D.new()
 		
@@ -124,14 +82,16 @@ func _ready() -> void:
 		add_child(n)
 		
 		label_nodes.append(n)
+	shuffle_positions()
 
 
-func shuffle_positions(except: Array):
+func shuffle_positions():
 	var positions = []
 	for node in label_nodes:
 		if node == null:
 			continue
-		if node in except:
+		var notifier = node.get_node(node.name + "_notifier")
+		if notifier.is_on_screen():
 			continue
 		for part in node.get_children():
 			if is_instance_of(part, Label):
@@ -143,22 +103,31 @@ func shuffle_positions(except: Array):
 	for node in label_nodes:
 		if node == null:
 			continue
-		if node in except:
+			
+		var notifier = node.get_node(node.name + "_notifier")
+		if notifier.is_on_screen():
 			continue
-		for part in node.get_children():
-			if !is_instance_of(part, Panel):
-				part.position.x = positions[i]
-			else:
-				part.position.x = positions[i] - 18
+
+		var label = node.get_node("Label")
+		var panel = node.get_node("Panel")
+		var area_2d = node.get_node("Area2D")
+		
+		label.position.x = positions[i]
+		panel.position.x = positions[i] - 18
+		area_2d.position.x = panel.position.x + panel.size.x/2
 		i += 1
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	for node in label_nodes:
 		if node == null:
 			continue
-		for part in node.get_children():
-			part.position.x += GlobalVariables.word_speed
-			if part.position.x > max_distance + get_viewport_rect().position.x:
-				part.position.x = get_viewport_rect().position.x - 200
+			
+		node.position.x += GlobalVariables.word_speed
+		if node.position.x > max_distance + get_viewport_rect().position.x:
+			node.position.x = get_viewport_rect().position.x - 200
+		#
+		#for part in node.get_children():
+		#	part.position.x += GlobalVariables.word_speed
+		#	if part.position.x > max_distance + get_viewport_rect().position.x:
+		#		part.position.x = get_viewport_rect().position.x - 200

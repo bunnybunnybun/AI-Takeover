@@ -1,25 +1,30 @@
 [gd_scene format=3 uid="uid://bvp70gnr1l6bm"]
 
 [ext_resource type="Script" uid="uid://w7s4eeivyw7l" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://ddl6tvnuar0i7" path="res://scenes/main_menu.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b4t8lkx0h57yd" path="res://scenes/word_push.tscn" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://difddham78e5g" path="res://scripts/flash.tscn" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://omny4bnx80le" path="res://scenes/river.tscn" id="4_jyhfs"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://brx3uxf64o48t" path="res://scenes/background_elections.tscn" id="5_tbgi4"]
-=======
-[ext_resource type="PackedScene" path="res://background_elections.tscn" id="5_tbgi4"]
->>>>>>> 0bae3b5b1cc899a7c5f007592593787a408fceae
+[ext_resource type="PackedScene" uid="uid://brx3uxf64o48t" path="res://background_elections.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://x4b5geqgt1ku" path="res://scenes/pause_menu.tscn" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://b85b6ey3oc1c8" path="res://scenes/color_changer.gd" id="7_o6xl0"]
+[ext_resource type="Script" uid="uid://r32ssmhuvrl8" path="res://scenes/opponent_score.gd" id="8_tipki"]
+
+[sub_resource type="Theme" id="Theme_tefeu"]
+default_font_size = 45
+
+[sub_resource type="Theme" id="Theme_85g3d"]
+default_font_size = 45
 
 [node name="main" type="Node2D" unique_id=1916585667]
 script = ExtResource("1_o5qli")
+
+[node name="main_menu" parent="." unique_id=1618483000 instance=ExtResource("2_sugp2")]
+visible = false
 
 [node name="River" parent="." unique_id=256900186 instance=ExtResource("4_jyhfs")]
 z_index = 150
 
 [node name="Node2D" parent="." unique_id=1823685871 instance=ExtResource("5_tbgi4")]
-
-[node name="flash" parent="." unique_id=1108422954 instance=ExtResource("3_tefeu")]
 
 [node name="WordPush" parent="." unique_id=379484559 instance=ExtResource("3_jyhfs")]
 position = Vector2(490, 162)
@@ -28,4 +33,22 @@ scale = Vector2(0.5, 0.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1785235728]
 
 [node name="pause_menu" parent="CanvasLayer" unique_id=1764987467 instance=ExtResource("6_tefeu")]
-visible = false
+
+[node name="Score" type="Label" parent="." unique_id=1087720936]
+offset_left = 270.0
+offset_top = 140.0
+offset_right = 297.0
+offset_bottom = 210.0
+theme = SubResource("Theme_tefeu")
+text = "0"
+script = ExtResource("7_o6xl0")
+
+[node name="Opponent Score" type="Label" parent="Score" unique_id=34860430]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 9.0
+offset_right = 650.0
+offset_bottom = 72.0
+theme = SubResource("Theme_85g3d")
+text = "0"
+script = ExtResource("8_tipki")
