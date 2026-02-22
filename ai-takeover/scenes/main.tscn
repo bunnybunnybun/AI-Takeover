@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://w7s4eeivyw7l" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://b4t8lkx0h57yd" path="res://scenes/word_push.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://omny4bnx80le" path="res://scenes/river.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://brx3uxf64o48t" path="res://background_elections.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" path="res://background_elections.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://x4b5geqgt1ku" path="res://scenes/pause_menu.tscn" id="6_tefeu"]
 
 [node name="main" type="Node2D" unique_id=1916585667]
@@ -21,3 +21,4 @@ scale = Vector2(0.5, 0.5)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1785235728]
 
 [node name="pause_menu" parent="CanvasLayer" unique_id=1764987467 instance=ExtResource("6_tefeu")]
+visible = false
